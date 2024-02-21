@@ -273,7 +273,7 @@ include_once(G5_THEME_PATH.'/head.php');
         </li>
     </ul>
     
-    <!--------------------오시는길--------------------->
+    <!--------------------오시는길, 20240222-01 집에서 테스트 함. --------------------->
     <div class="way_to_gic_img  animated fadeInUpShort">
         <h2 class="content_title">위치안내<small>(대중교통 이용시)</small></h2>
         <div>         
