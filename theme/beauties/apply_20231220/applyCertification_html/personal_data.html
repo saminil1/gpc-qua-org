@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="moodle, GPC 인증 신청 시스템" />
+    <meta name="description" content="GPC 인증 신청 시스템" />
+    <title>GPC 인증 신청 시스템</title>
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="//3.36.181.167/pluginfile.php/1/theme_mb2nl/favicon/1655248541/favicon.ico" />
+    <!-- Bootstrap 연결 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fontawesome 연결 -->
+    <script src="https://kit.fontawesome.com/3fa2bab9a8.js" crossorigin="anonymous"></script>
+    <!-- CSS/Javascript 파일 연결 -->
+    <link rel="stylesheet" href="/css/default.css">
+    <link rel="stylesheet" href="/css/design.css">
+    <link rel="stylesheet" href="/css/subpage_design.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <script type="text/javascript" src="/design.js"></script> 
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</head>
+<body>
+    <header w3-include-html="header.html"></header>
+    <div id="page-b">
+        <div id="sub-content">
+            <div class="breadcrumb_bg">
+                <div class="container-fluid">
+                    <div class="row">
+                        <nav class="col-md-12">
+                            <ul class="breadcrumb">
+                                <li><a href="#">Home</a></li>
+                                <li>자격 등록신청</li>
+                            </ul>
+                            <h1>자격 등록신청</h1>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="tt_wh">
+                                <h2 class="point_col">자격 등록신청</h2>
+                                <p class="tt_line"></p>
+                            </div>
+                            <div class="text-box bg" style="margin: 0 0 2rem;">
+                                <span style="line-height: 2.88;">아래 정보를 입력하여 주십시오.</span>
+                            </div>
+                            <div id="form01">
+                                <form name="fm_write" class="" method="post" enctype="multipart/form-data" >
+                                <input type="hidden" id="hand" name="hand" value="reg">
+                            
+                                    <table class="type01">
+                                        <thead>
+                                            <tr style="display:none">
+                                                <th scope="cols"></th>
+                                                <th scope="cols"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">자격구분</th>
+                                                <td colspan="3">
+                                                    ISO 기반 표준 심사원
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">신청규격</th>
+                                                <td colspan="3">
+                                                    ISO 9001:2015
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">등급</th>
+                                                <td>
+                                                    심사원
+                                                </td>
+                                                <th scope="row">유형</th>
+                                                <td>
+                                                    최초인증
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="required">이름(한)</th>
+                                                <td>
+                                                    <input type="text" id="name_ko" name="name_ko" value="" style="width: 100%;border: 1px solid #bbb;" required>
+                                                </td>
+                                                <th scope="row" class="required">이름(영)</th>
+                                                <td>
+                                                    <input type="text" id="name_en" name="name_en" value="" style="width: 100%;border: 1px solid #bbb;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="required">핸드폰번호</th>
+                                                <td>
+                                                    <input type="text" id="hp" name="hp" value="" style="width: 100%;border: 1px solid #bbb;">
+                                                </td>
+                                                <th scope="row" class="required">이메일</th>
+                                                <td>
+                                                    <input type="text" id="email" name="email" value="" style="width: 100%;border: 1px solid #bbb;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">주소</th>
+                                                <td colspan="3">
+                                                    <input type="text" id="sample6_postcode" placeholder="우편번호" style="width: 35%;border: 1px solid #bbb;">
+                                                    <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+                                                    <input type="text" id="sample6_address" placeholder="도로명 주소" style="width: 100%;border: 1px solid #bbb;margin: 1rem 0;"><br>
+                                                    <input type="text" id="sample6_detailAddress" placeholder="상세 주소" style="width: 100%;border: 1px solid #bbb;">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">제출문서</th>
+                                                <td colspan="3">
+                                                    <table style="width: 100%;">
+                                                        <tbody>
+                                                            <tr class="tablet_none">
+                                                                <th style="width:40%;border-right: 1px solid #ddd;" class="bd_right">구분</th>
+                                                                <th style="width:60%;">비고</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="tint_th bollotBox">학력</td>
+                                                                <td>
+                                                                    <div class="custom-control custom-checkbox">
+                                                                        <input type="radio" class="custom-control-input" id="customCheck1" value="실무경력포함" checked=""><label class="custom-control-label" for="customCheck1">고등학교 졸업</label>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="tint_th bollotBox">업무경력</td>
+                                                                <td>
+                                                                    <div class="custom-control custom-checkbox">
+                                                                        <input type="radio" class="custom-control-input" id="customCheck2" value="심사원 5맨데이, 선임 8맨데이" checked=""><label class="custom-control-label" for="customCheck2">관련 표준 2년 이상의 실무경력</label>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="tint_th bollotBox">교육수료</td>
+                                                                <td>
+                                                                    <ul>
+                                                                        <li>
+                                                                            <label><input type="radio" class="custom-control-input" id="customCheck3" name="chk_grd" value="서약서">PCAA 인정 교육 수료</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <label><input type="radio" class="custom-control-input" id="customCheck3" name="chk_grd" value="서약서">이외의 교육 수료</label>
+                                                                        </li>
+                                                                        <li>
+                                                                            <label><input type="radio" class="custom-control-input" id="customCheck3" name="chk_grd" value="서약서" checked="">해당 없음</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="tint_th bollotBox">심사경력</td>
+                                                                <td>
+                                                                    <div class="custom-control custom-checkbox">
+                                                                        <input type="radio" class="custom-control-input" id="customCheck4" value="교육수료" checked=""><label class="custom-control-label" for="customCheck4">관련 표준 및 등급에 따른 심사로그 또는 검증평가 1회</label>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">파일업로드</th>
+                                                <td colspan="3"><input type="file" class="form-control-file" id="ControlFile1" style="padding: 0"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">신청비</th>
+                                                <td colspan="3">
+                                                    <strong style="font-weight: 600;">110,000원 (<span style="color: #e63946;">부가세포함</span>)</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">결제수단</th>
+                                                <td colspan="3">
+                                                    <strong style="font-weight: 600;">무통장입금 (국민은행 873237-04-001683 예금주: (주)아이지씨인증원)</strong>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">영수증 발급</th>
+                                                <td colspan="3">
+                                                    <ul class="chk_recpt">
+                                                        <li>
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck5"><label class="custom-control-label" for="customCheck5">현금영수증</label>
+                                                            </div>
+                                                        </li>
+                                                        <input type="text" placeholder="발행 연락처" class="custom-control-input-text" style="width: 50%;border: 1px solid #bbb;" disabled="disabled">
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">요청사항</th>
+                                                <td colspan="3">
+                                                    <form>
+                                                        <textarea name="requests" wrap="virtual" style="width: 100%;min-height: 180px;border: 1px solid #ddd;"></textarea>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div style="text-align:center;margin-top:30px">
+                                        <input type="button" name="checkButton" id="submitAction" class="btn btn-lg btn-primary" style="font-weight:400;" value="신청서 제출" onclick="check_onclick()">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page-outer -->
+    <ul class="theme-static-content theme-iconnav" style="margin-top: -57px;">
+        <li class="theme-static-item1">
+            <a class="link-replace" href="#">
+                <span class="static-icon"><i class="fa fa-life-ring"></i></span>
+                <span class="text">Link with icon</span>
+            </a>
+        </li>
+        <li class="theme-static-item2">
+            <a class="link-replace" href="#" target="_blank">
+                <span class="static-icon"><i class="fa fa-link"></i></span>
+                <span class="text">Link with icon open in a new window</span>
+            </a>
+        </li>
+        <li class="theme-static-item3">
+            <span class="link-replace"><span class="static-icon"><i class="fa fa-unlock"></i></span><span class="text">Text for guests</span></span>
+        </li>
+    </ul>
+    <button onclick="topFunction()" id="btn_top" title="Go to top"><i class="fa fa-angle-up"></i></button>
+    <footer w3-include-html="footer.html"></footer>
+
+    <!-- design.js -->
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        includeHTML();
+    </script>
+
+    <script>
+        function sample6_execDaumPostcode() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                    // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                    // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                    var addr = ''; // 주소 변수
+                    
+
+                    //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                    if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                        addr = data.roadAddress;
+                    } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                        addr = data.jibunAddress;
+                    }
+
+                    // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                    document.getElementById('sample6_postcode').value = data.zonecode;
+                    document.getElementById("sample6_address").value = addr;
+                    // 커서를 상세주소 필드로 이동한다.
+                    document.getElementById("sample6_detailAddress").focus();
+                }
+            }).open();
+        }
+    </script>
+
+    <script>
+        function check_onclick() {
+
+            theForm=document.fm_write;
+            
+            if(theForm.name_ko.value=="") {
+                alert("이름을 입력해주세요. 필수 입력 사항입니다.");
+                return theForm.name_ko.focus();
+            };
+
+            if(theForm.name_en.value=="") {
+                alert("이름을 입력해주세요. 필수 입력 사항입니다.");
+                return theForm.name_en.focus();
+            };
+            
+            if(theForm.hp.value=="") {
+                alert("핸드폰 번호를 입력해주세요. 필수 입력 사항입니다.");
+                return theForm.hp.focus();
+            };
+            
+            if(theForm.email.value=="") {
+                alert("이메일을 입력해주세요. 필수 입력 사항입니다.");
+                return theForm.email.focus();
+            };
+
+            if(confirm('이대로 제출하시겠습니까?')) {
+
+                o_OBJ = $('form[name=fm_write]').serialize();
+                $.ajax({
+                    url: 'save_db.php',
+                    data : o_OBJ,
+                    //data : {'hand':'del','idx':idx},
+                    dataType: "html",
+                    type : 'POST',
+                    timeout : 1000,
+                    error : function( xhr, ajaxOptions, thrownError ) {
+                        // alert( "재확인 후 다시 제출해주시길 바랍니다." );
+                        location.href="apply_done.html";
+                    },
+                    
+                    success: function(data) {
+                        console.log(data);
+                        location.href="personal_data.php";
+                        //if( data.code == "OK" ) {
+                            //alert( data.msg );
+                            //document.location.reload();
+                            //location.href="list.php";
+                        //}
+                        //else if( data.code == "ERR" ) {
+                            //alert( data.msg );
+                        //}
+                    }
+                });
+            };
+        };
+    </script>
+
+    <script>
+        // 영수증 발급 체크하면 텍스트박스 활성화되어 발행 연락처 입력 가능
+        $(".chk_recpt").attr("disabled", true);
+        $(".custom-control").on('click',function(){
+            var chk = $('input:checkbox[id="customCheck5"]').is(":checked");
+            if(chk==true){
+                $(".custom-control-input-text").removeAttr('disabled');
+            }else{
+                $(".custom-control-input-text").attr("disabled", true);
+            }
+        });
+    </script>
+    
+</body>
+</html>

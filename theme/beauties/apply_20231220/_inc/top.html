@@ -1,0 +1,68 @@
+<div class="wrapper <?=$_SET['Nav']['pagename']?>">
+	<header>
+		<div class="top_area">
+			<h1 onclick="goUrl('index.html');"><?=$_SET['Body']['head_tit']?></h1>
+			<nav>
+				<ul class="top_nav">
+					<!--li onclick="goUrl('index.html');">HOME</li-->
+					<li class="user"><i class="xi xi-user-o"></i><b><?=$_SESSION['loginAdmin']['name']?></b>님</li>
+					<li onclick="goUrl('admin_info.html');">내 계정관리</li>
+					<li onclick="setLogout();">로그아웃</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+<aside>
+	<nav>
+		<ul class="main_nav">
+			<li>
+				<p>회원</p>
+				<dl>
+					<dd onclick="goUrl('member_list.html');">회원계정</dd>
+					<dd onclick="goUrl('log_list.html');">접속기록</dd>
+				</dl>
+			</li>
+			<li>
+				<p>메인화면</p>
+				<dl>
+					<dd onclick="goUrl('message_bar.html?tab=TOP');">메시지바</dd>
+					<dd onclick="goUrl('banner_list.html')">비주얼배경</dd>
+					<dd onclick="alert('준비중입니다.')">광고노출</dd>
+				</dl>
+			</li>
+			<li>
+				<p>L가이드</p>
+				<dl>
+					<dd onclick="goUrl('notice_list.html');">공지사항</dd>
+					<dd onclick="goUrl('update_list.html');">업데이트알림</dd>
+					<dd onclick="goUrl('doc_info.html');">약관</dd>
+				</dl>
+			</li>
+			<li>
+				<p>L라운드</p>
+				<dl>
+					<dd onclick="goUrl('pann_category.html');">카테고리</dd>
+					<dd onclick="goUrl('pann_list.html');">포스팅</dd>
+				</dl>
+			</li>
+			<li>
+				<p>맵메뉴</p>
+				<dl>
+					<dd onclick="goUrl('map_category.php');">카테고리관리(맛집)</dd>
+					<dd onclick="goUrl('map_category2.php');">카테고리관리(테마)</dd>
+					<dd onclick="goUrl('map_list.php');">맵데이터</dd>
+					<dd onclick="goUrl('board_control.php');">게시물</dd>
+				</dl>
+			</li>
+			<li>
+				<p>관리자</p>
+				<dl>
+					<dd onclick="goUrl('admin_list.html');">관리자 계정</dd>
+					<dd onclick="goUrl('pay_list.html');">결제내역</dd>
+					<dd onclick="goUrl('qna.html');">1:1문의</dd>
+					<dd onclick="goUrl('singo.html');">신고내역</dd>
+				</dl>
+			</li>
+		</ul>
+	</nav>
+</aside>

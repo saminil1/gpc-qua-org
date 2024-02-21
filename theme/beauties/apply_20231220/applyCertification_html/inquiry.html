@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="moodle, GPC 인증 신청 시스템" />
+    <meta name="description" content="GPC 인증 신청 시스템" />
+    <title>GPC 인증 신청 시스템</title>
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="//3.36.181.167/pluginfile.php/1/theme_mb2nl/favicon/1655248541/favicon.ico" />
+    <!-- Bootstrap 연결 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fontawesome 연결 -->
+    <script src="https://kit.fontawesome.com/3fa2bab9a8.js" crossorigin="anonymous"></script>
+    <!-- CSS/Javascript 파일 연결 -->
+    <link rel="stylesheet" href="/css/default.css">
+    <link rel="stylesheet" href="/css/design.css">
+    <link rel="stylesheet" href="/css/subpage_design.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <script type="text/javascript" src="/design.js"></script> 
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <script type="text/javascript">
+        $(function(){   
+            $("#sCode").on('input',function(){
+                if($("#sCode").val()=='')
+                    $("#TestBtn").attr("disabled",true);
+                else
+                    $("#TestBtn").attr("disabled",false);
+            });
+        })
+        function btnActive()  {
+
+          const subMt = document.getElementById('submiT');
+          subMt.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <header w3-include-html="header.html"></header>
+    <div id="page-b">
+        <div id="sub-content">
+            <div class="breadcrumb_bg">
+                <div class="container-fluid">
+                    <div class="row">
+                        <nav class="col-md-12">
+                            <ul class="breadcrumb">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">자격 등록신청</a></li>
+                                <li>신청 진행상황 조회</li>
+                            </ul>
+                            <h1>신청 진행상황 조회</h1>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="tt_wh">
+                                <h2 class="point_col">신청 진행상황 조회</h2>
+                                <p class="tt_line"></p>
+                            </div>
+                            <div class="text-box bg" style="margin: 0 0 2rem;">
+                                <span>자격 등록신청시 안내 받으신 인증번호를 입력하여 주세요.</span>
+                            </div>
+                            <div id="form01">
+                                <table class="type01">
+                                    <tbody>
+                                        <tr height="35">
+                                            <th scope="row">인증번호</th>
+                                            <td>
+                                                <input type="text" name="sCode" id="sCode" class="lance" style="width: 50%;border: 1px solid #bbb;">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <button disabled="true" id="TestBtn" class="btn btn-success" style="display: table;margin: 0 auto 100px;" onclick='btnActive();'>확인</button>
+                            <div id="submiT" style="margin: 0 0 100px;display: none;">
+                                <p class="con_tt">조회 결과</p>
+                                <div id="form01">
+                                    <p class="bollotBox" style="position: relative;font-weight: 600;margin-top: 2rem;padding: 0 0 0 20px;">사용자 정보</p>
+                                    <table class="type01">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">이름</th>
+                                                <td>홍길동(hongkildong)</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">연락처</th>
+                                                <td>010-123-4567</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">이메일</th>
+                                                <td>test1@gmail.com</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">주소</th>
+                                                <td>서울시 강남구 역삼동</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p class="bollotBox" style="position: relative;font-weight: 600;margin-top: 2rem;padding: 0 0 0 20px;">신청 내역</p>
+                                    <table class="type01">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">자격구분</th>
+                                                <td>ISO 심사원자격</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">신청유형</th>
+                                                <td>최초인증</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">신청규격</th>
+                                                <td>ISO 9001:2015</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">등급</th>
+                                                <td>심사원보</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">범위</th>
+                                                <td style="text-align: justify;">
+                                                    음식료 및 담배, 섬유 및 섬유제품, 가죽 및 가죽제품, 펄프ㆍ종이 및 종이제품, 출판업, 인쇄업, 코크스 제소 및 석유 정제품, 핵연료, 화학약품, 화학제품, 의약품, 고무 및 플라스틱제품, 비금속광물제품, 콘크리트, 시멘트, 석회, 석고 등, 기초금속 및 조립금속제품, 기계 및 장비, 전기및 광학기기, 선박, 항공기타 수송장비, 기타 제조업, 재생, 전기공급, 가스공급, 수도공급, 건설, 도ㆍ소매업.자동차ㆍ오토바이 수리, 개인 및 가정용품 수리, 숙박 및 음식점, 운수, 창고, 통신, 금융 및 보험, 부동산, 임대, 정보기술, 엔지니어링 서비스, 기타서비스, 공공행정, 교육, 보건 및 사회복지, 기타 사회서비스
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page-outer -->
+    <ul class="theme-static-content theme-iconnav" style="margin-top: -57px;">
+        <li class="theme-static-item1">
+            <a class="link-replace" href="#">
+                <span class="static-icon"><i class="fa fa-life-ring"></i></span>
+                <span class="text">Link with icon</span>
+            </a>
+        </li>
+        <li class="theme-static-item2">
+            <a class="link-replace" href="#" target="_blank">
+                <span class="static-icon"><i class="fa fa-link"></i></span>
+                <span class="text">Link with icon open in a new window</span>
+            </a>
+        </li>
+        <li class="theme-static-item3">
+            <span class="link-replace"><span class="static-icon"><i class="fa fa-unlock"></i></span><span class="text">Text for guests</span></span>
+        </li>
+    </ul>
+    <button onclick="topFunction()" id="btn_top" title="Go to top"><i class="fa fa-angle-up"></i></button>
+    <footer w3-include-html="footer.html"></footer>
+    
+    <!-- design.js -->
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        includeHTML();
+    </script>
+</body>
+</html>

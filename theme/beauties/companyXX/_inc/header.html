@@ -1,0 +1,77 @@
+<?php
+require_once $_SET['Path']['inc']."/_config.auth.php";
+$dev = time();
+?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, maximum-scale=1.0, minimum-scale=1.0" charset="utf-8" />
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="Keywords" content="" />
+	<meta name="author" content="" />
+	<meta name="robots" content="all" />
+	<meta name="formnat-detection" content="telephone=no, address=no, email=no" />
+
+	<title><?=$_SET['Body']['title']?></title>
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<link rel="manifest" href="/manifest.json">
+	<meta name="description" content="리빙맵">
+	<meta name="theme-color" content="#efd528" />
+	<meta name="google-site-verification" content="qGje6B195okxuy73oG_NkQzvn0tOQVSeINwNwqnihmI" />
+
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="리빙맵">
+	<link rel="apple-touch-icon" href="/_img/icons/apple-touch-icon.png?1" />
+	<link rel="apple-touch-icon" sizes="57x57" href="/_img/icons/apple-touch-icon-57x57.png?1" />
+	<link rel="apple-touch-icon" sizes="72x72" href="/_img/icons/apple-touch-icon-72x72.png?1" />
+	<link rel="apple-touch-icon" sizes="76x76" href="/_img/icons/apple-touch-icon-76x76.png?1" />
+	<link rel="apple-touch-icon" sizes="114x114" href="/_img/icons/apple-touch-icon-114x114.png?1" />
+	<link rel="apple-touch-icon" sizes="120x120" href="/_img/icons/apple-touch-icon-120x120.png?1" />
+	<link rel="apple-touch-icon" sizes="144x144" href="/_img/icons/apple-touch-icon-144x144.png?1" />
+	<link rel="apple-touch-icon" sizes="152x152" href="/_img/icons/apple-touch-icon-152x152.png?1" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/_img/icons/apple-touch-icon-180x180.png?1" />
+
+
+	<link rel="icon" href="/_img/favicon.ico?dev=1">
+	<link rel="shortcut icon" href="/_img/favicon.ico?dev=1" />
+
+	<script src="/_glb/js/jquery-2.1.1.min.js"></script>
+	<script src="/_glb/js/imagesloaded.pkgd.min.js"></script>
+	<script src="/_glb/js/jquery-ui/jquery-ui.min.js" ></script>
+	<script src="/_glb/js/jquery.form.js"></script>
+	<script src="/_glb/js/json/json2.js"></script>
+	<script src="/_glb/js/exif.js"></script>
+
+	<script src="/_glb/js/js_global.js?dev=<?=$dev?>"></script>
+	<script src="/_glb/js/datetimepicker/jquery.datetimepicker.js"></script>
+	<script src="/_glb/js/js_page_css.js?dev=<?=$dev?>"></script>
+	<script src="/_inc/js/js_admin.js?dev=<?=$dev?>"></script>
+
+	<link rel="stylesheet" href="/_glb/js/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" href="/_glb/js/datetimepicker/jquery.datetimepicker.css">
+
+	<!--link rel="stylesheet" href="/_glb/css/style_global.css?dev=<?=$dev?>"-->
+	<link rel="stylesheet" href="<?=$_SET['Path']['in_css']?>/style_admin.css?dev=<?=$dev?>">
+	<link rel="stylesheet" href="<?=$_SET['Path']['in_css']?>/responsive.css?dev=<?=$dev?>">
+
+	<script src="/_glb/js/slick/slick.min.js"></script>
+	<link rel="stylesheet" href="/_glb/js/slick/slick.css">
+
+	<!--[if lt IE 9]>
+	<script src="/_js/html5shiv.js"></script>
+	<![endif]-->
+
+	<!--script data-ad-client="ca-pub-6553465614984908" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script-->
+</head>
+
+<body class="<?=$_SET['Nav']['pagename']?>">
+	<script>
+		var isLogin = new Array();
+			isLogin['admin'] = parseInt("<?=$_SET['isLogin']['admin']?>");
+		var isRoot = "<?=$_SET['Path']['root']?>";
+	</script>

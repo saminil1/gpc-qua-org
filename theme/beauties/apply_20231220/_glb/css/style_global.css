@@ -1,0 +1,95 @@
+@charset "utf-8";
+@import url(./fonts/Titillium.css);
+@import url(./fonts/NotoSansKR.css);
+@import url(./icons/fa/css/font-awesome.css);
+@import url(./icons/sl/simple-line-icons.css);
+@import url(./icons/xi/xeicon.css);
+
+/* basic_start */
+html                { }
+body                { overflow:hidden;overflow-y: scroll;margin:0px; padding:0px; font-family:'Noto Sans KR', sans-serif; font-size:14px; letter-spacing:0px; color:#111; font-weight:300; line-height:160%; background:#eee;min-width:320px;}
+body.win	        { min-width:550px;height: auto;position: relative;background: #eee;}
+
+body.win > section { padding:10px 20px 20px 20px; background:#eee; }
+body.win > section > h1 { font-size:24px;font-weight:400;color:#111;line-height:50px; }
+body.win > section > h1.center { display:block;text-align:center; font-size:30px;line-height:65px;margin-bottom:5px; }
+body.win > section > h1 > span { float:right;display:inline-block;vertical-align: bottom;font-size:14px;font-weight:400;color:#999;line-height:20px;margin-top:20px;}
+body.win > section > p { font-size:14px;font-weight:400;color:#999;line-height:20px;margin-bottom:10px; margin-top:-7px;}
+
+body.win > section > h4 {font-size:16px;line-height:22px;margin:0px;padding:0px;display:block;vertical-align:bottom;font-weight:500;text-align: left;position: relative;margin-bottom:10px;}
+body.win > section > h4 > span { display:block;line-height:20px;font-size:14px;color:#999;font-weight:400; }
+body.win > section > h4 > div { position:absolute;top:3px;right:0px;font-size:0px; }
+body.win > section > h4 > div > a { display:inline-block;margin:0px 2px;height:34px;line-height:34px;width:auto;color:#666;font-weight:300; vertical-align: middle;font-size:14px;background:#fff;text-align:center;cursor:pointer; border:1px solid #999;padding:0px 15px; -webkit-border-radius: 4px;-khtml-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;}
+body.win > section > h4 > div > a.cyanbg { position:relative;background:#23aab6;border:1px solid rgba(0,0,0,0.2);color:#fff;}
+body.win > section > h4 > div > a.bluebg { position:relative;background:#5fa2dd;border:1px solid rgba(0,0,0,0.2);color:#fff;}
+body.win > section > h4 > div > a.redbg { background:#ec635d;border:1px solid rgba(0,0,0,0.2);color:#fff;}
+body.win > section > h4 > div > a.greenbg { background:#45a171;border:1px solid rgba(0,0,0,0.2);color:#fff;}
+body.win > section > h4 > div > a.graybg { background:#999;border:1px solid rgba(0,0,0,0.2);color:#fff;}
+body.win > section > h4 > div > a.blackbg { background:#48535f;border:1px solid rgba(0,0,0,0.2);color:#fff;}
+body.win > section > h4 > div > a > i {margin-right:5px;vertical-align:middle;line-height:27px;}
+
+
+body {
+	scrollbar-arrow-color: #ddd;
+	scrollbar-Track-Color: #ddd;
+	scrollbar-base-color: #ccc;
+	scrollbar-Face-Color: #ccc;
+	scrollbar-3dLight-Color: #ccc;
+	scrollbar-DarkShadow-Color: #ccc;
+	scrollbar-Highlight-Color: #ccc;
+	scrollbar-Shadow-Color: #ccc;
+}
+::-webkit-scrollbar { width: 5px; height: 5px; background: transparent;}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment { display: block; width: 0px;height: 0px; background: rgba(0,0,0,0); }
+::-webkit-scrollbar-track { background: rgba(0,0,0,.1); }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,.1); }
+
+
+/* - 코드 초기화 - */
+	div,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,form,fieldset,legend,input,textarea,button,select { border:0px;padding:0px; margin:0px; font-family:'Noto Sans KR', sans-serif;font-size:14px;line-height:160%; letter-spacing:0px; color:#111;font-weight:300; }
+	img {  display:inline-block;border:0px;padding:0px; margin:0px; }
+	ul,ol,li,dl,dt,dd   { list-style:none;}
+	table,tr,td,th  { border:0px;padding:0px; margin:0px;border-spacing:0px;}
+	i,em				{ font-style:normal;vertical-align:middle; }
+	select { -webkit-appearance:none;appearance:none; -moz-appearance:none; text-indent: 1px; text-overflow: ''; }
+	input, textarea, button, select {-webkit-appearance:none; -moz-appearance:none; appearance:none;font-family:'Noto Sans KR', sans-serif !important;outline: none;-webkit-border-radius:0; -moz-border-radius:0; -o-border-radius:0; border-radius:0;background: transparent;}
+	button[type=button] { cursor:pointer;outline: none; }
+	a                   { text-decoration:none; color:#111;outline:none; cursor:pointer;}
+	a:visited           { color:#111; }
+	a:active            { color:#111; }
+	a:hover             { color:#111; text-decoration:none; }
+	.clear { float:none;clear:both; }
+/* - @코드 초기화 - */
+
+/* - 체크박스, 라디오버튼 CSS 설정(xeicon import 필요) - */
+	label { position:relative; display:inline-block;margin-right:0px; padding-left:20px; height:20px; color:#888; text-align:left; line-height:20px; vertical-align:middle; cursor:pointer; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; overflow:hidden; font-size:0px;}
+	label > input[type=checkbox] { display:none; }
+	label > input[type=checkbox] + span  { display:inline-block;line-height:20px;vertical-align:middle;font-size:14px;margin-left:5px;  }
+	label > input[type=checkbox] + span:before { position:absolute; top:0px; left:0px; width:18px;height:18px; -webkit-border-radius: 3px;-khtml-border-radius: 3px;-moz-border-radius: 3px;border-radius: 3px; border: 1px solid rgba(0,0,0,0.2); content: '';  }
+	label > input[type=checkbox]:checked + span  { color:#111; -webkit-tap-highlight-color:transparent; }
+	label > input[type=checkbox]:checked + span:before {  background: #fff; font-size:18px;text-align:center;line-height:18px; font-family: 'xeicon' !important; display: inline-block; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;  color:#111; content: "\e928"; }
+	label > input[type=radio] { display:none; }
+	label > input[type=radio] + span  { display:inline-block;line-height:20px;vertical-align:bottom;font-size:14px;margin-left:5px;  }
+	label > input[type=radio] + span:before { position:absolute; top:0px; left:0px; width:18px;height:18px; -webkit-border-radius: 50%;-khtml-border-radius: 50%;;-moz-border-radius: 50%;;border-radius: 50%; border: 1px solid rgba(0,0,0,0.2); content: '';  }
+	label > input[type=radio]:checked + span  { color:#111; -webkit-tap-highlight-color:transparent; }
+	label > input[type=radio]:checked + span:before {  background: #fff; font-size:18px;text-align:center;line-height:18px; font-family: 'xeicon' !important; display: inline-block; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1;-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; color:#111; content: "\e928"; }
+/* - 체크박스, 라디오버튼 CSS 설정 - */
+
+/* - 페이지 로딩 처리 - */
+	body.loading:after {  font: normal normal normal 14px/1 FontAwesome;font-size: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
+		content: "\f110";position:fixed;top:50%;left:50%;width:50px;height:50px;line-height:50px;font-size:44px;padding:5px;z-index:1000;margin-left:-30px;margin-top:-30px;
+		-webkit-border-radius: 50%;-khtml-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;background:#fff;color:#2d3845;overflow:hidden;border-radius: 50%;text-align: center;
+		animation: spin 1s linear infinite;will-change: transform, opacity;
+		box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.2);
+	}
+
+	body.loading:before { display:block;position:fixed;top:0px;left:0px;right:0px;bottom:0px;background:rgba(0,0,0,0.7);z-index:999;will-change: transform, opacity;content:''; }
+
+	@keyframes spin {
+	    0% { transform: rotate(0deg); }
+	    100% { transform: rotate(360deg); }
+	}
+/* - @페이지 로딩 처리 - */
+
+/* @기본설정 */

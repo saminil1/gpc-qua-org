@@ -1,0 +1,117 @@
+<?php
+$SEARCH_QRY = Array();
+$SEARCH_QRY[] = " bcode = '001' ";
+$SEARCH_QRY[] = " top_flag = 1 ";
+$SEARCH_QRY[] = " top_flag_mobile = 0 ";
+
+$top_notice = $Mysql_Base->Query_result("
+							select title
+								from notice
+										where ".echoSqlimplodeAnd( $SEARCH_QRY )."
+												order by idx desc
+													limit 1
+									");
+?>
+
+<div class="wrapper <?=$_SET['Nav']['pagename']?>">
+	<header class="pann">
+<?php if( $_COOKIE['TN'] != 'N' ) {
+	$SEARCH_QRY = Array();
+	$SEARCH_QRY[] = " bcode = '001' ";
+	$SEARCH_QRY[] = " top_flag = 1 ";
+	$SEARCH_QRY[] = " top_flag_mobile = 0 ";
+
+	$top_notice = $Mysql_Base->Query_result("
+								select title
+									from notice
+											where ".echoSqlimplodeAnd( $SEARCH_QRY )."
+													order by idx desc
+														limit 1
+										");
+	if( $top_notice ) {
+	?>
+		<div class="cnts_wrap msg obj_top_msg">
+			<div class="container">
+				<p class="marquee"><i class="fa fa-bullhorn" aria-hidden="true"></i><span><?=$top_notice?></span></p>
+				<button type="button" class="close btn_msg_close"></button>
+			</div>
+		</div>
+<?php } } ?>
+		<div class="cnts_wrap top">
+			<div class="container">
+				<button type="button" class="history_back btn_history_back"></button>
+				<div class="m_nav left">
+					<button type="button" class="filter_toggle btn_filter_open">필터</button>
+					<button type="button" class="search_toggle btn_search_page">검색</button>
+				</div>
+				<h1><a href="<?=$_SET['Path']['root']?>/pann/list.html"><?=$_SET['Body']['brand']?></a></h1>
+				<div class="m_nav right">
+<?php if( $_SET['isLogin']['member'] == 1 ) {
+	$feed_cnt = $Mysql_Base->Query_result(" select count(*) from rt_feed where mb_seq = '".$_SESSION['loginUser']['seq']."' and rd_read = 0 limit 1 ");
+?>
+					<a class="myhome" href="<?=$_SET['Path']['root']?>/myhome/" style="background-image:url(<?=$_SESSION['loginUser']['thum']?>)"><em data-cnt="<?=intval($feed_cnt)?>"></em></a>
+<?php } ?>
+					<button type="button" class="nav_toggle btn_lnb_open">메뉴</button>
+				</div>
+				<div class="search obj_top_search">
+					<span>
+						<input type="text" name="search" placeholder="L라운드를 검색하세요." value="<?=$_GET['s']?>" onkeydown="if( window.event.keyCode==13 ) { $('.btn_total_search').click(); }">
+						<button type="button" class="total_search btn_total_search" onclick="setSearch();">검색</button>
+						<button type="button" class="search_close btn_search_close"></button>
+					</span>
+				</div>
+<script>
+function setSearch() {
+	goUrl('?s='+$('input[name=search]').val());
+}
+</script>
+				<div class="d_nav">
+<?php if( $_SET['isLogin']['member'] == 1 ) {
+	$feed_cnt = $Mysql_Base->Query_result(" select count(*) from rt_feed where mb_seq = '".$_SESSION['loginUser']['seq']."' and rd_read = 0 limit 1 ");
+?>
+					<a class="myhome" href="<?=$_SET['Path']['root']?>/myhome/" style="background-image:url(<?=$_SESSION['loginUser']['thum']?>)"><em data-cnt="<?=intval($feed_cnt)?>"></em></a>
+<?php } ?>
+					<button type="button" class="menu btn_whole_menu"></button>
+				</div>
+			</div>
+		</div>
+		<?php require_once $_SET['Path']['inc']."/global_nav.html"; ?>
+	</header>
+<script>
+
+$(document).ready(function(){
+	var top_notice = getCookie( 'TN' );
+	if( top_notice == 'N' ) {
+		$('.wrapper > section').addClass('no_noti');
+	}
+
+	$(document).on("click", ".btn_msg_close", function() {
+		$('.obj_top_msg').hide();
+		$('.wrapper > section').addClass('no_noti');
+
+		setCookie( 'TN', 'N', '1' );
+	});
+
+	$(document).on("click", ".btn_search_page", function() {
+		goUrl('search.html?s='+$('input[name=search]').val());
+	});
+
+	$(document).on("click", ".btn_whole_menu", function() {
+		if( $(this).hasClass('opened') ) {
+			$(this).removeClass('opened');
+			$('.obj_sitemap').hide();
+		} else {
+			$(this).addClass('opened');
+			$('.obj_sitemap').show();
+		}
+	});
+
+	$(document).on("click", ".in_tab > a", function() {
+		$(this).closest('.in_tab').find('a').removeClass('on');
+		$(this).addClass('on');
+	});
+});
+
+</script>
+
+

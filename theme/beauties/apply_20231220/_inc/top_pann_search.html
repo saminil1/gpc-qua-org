@@ -1,0 +1,48 @@
+<div class="wrapper <?=$_SET['Nav']['pagename']?>">
+	<header class="search">
+		<div class="cnts_wrap top">
+			<div class="container">
+				<button type="button" class="history_back_s btn_history_back"></button>
+				<div class="search_s">
+					<span>
+						<input type="text" name="search" placeholder="검색어를 입력해주세요." value="<?=$_GET['s']?>" onkeydown="if( window.event.keyCode==13 ) { $('.btn_total_search').click(); }">
+						<button type="button" class="total_search btn_total_search" onclick="setSearch();">검색</button>
+					</span>
+				</div>
+				<button type="button" class="menu_s btn_whole_menu"></button>
+				<button type="button" class="nav_toggle_s btn_lnb_open"></button>
+			</div>
+		</div>
+		<?php require_once $_SET['Path']['inc']."/global_nav.html"; ?>
+	</header>
+<script>
+function setSearch() {
+	goUrl('list.html?s='+$('input[name=search]').val());
+}
+
+$(document).on("click", ".btn_msg_close", function() {
+	$('.obj_top_msg').slideUp();
+});
+
+$(document).on("click", ".btn_search_page", function() {
+	goUrl('search.html');
+});
+
+$(document).on("click", ".btn_whole_menu", function() {
+	if( $(this).hasClass('opened') ) {
+		$(this).removeClass('opened');
+		$('.obj_sitemap').hide();
+	} else {
+		$(this).addClass('opened');
+		$('.obj_sitemap').show();
+	}
+});
+
+$(document).on("click", ".in_tab > a", function() {
+	$(this).closest('.in_tab').find('a').removeClass('on');
+	$(this).addClass('on');
+});
+
+</script>
+
+

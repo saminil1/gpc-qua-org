@@ -1,0 +1,769 @@
+/* (공통 기본 pc버전 1920px) 놋북,태블릿 사이즈, 최대 1280px 화소까지 적용 */
+@media (max-width:1280px) {
+
+.wrap { width: 100%; padding: 0 30px }
+    
+/* 헤더 부분 */    
+#header.down { height:330px }
+#header .gnb .depth1{ padding:0 20px; }
+#header .gnb .depth1 > a{ font-size:1.2rem; }
+#header .gnb .depth2 > a{ font-size:0.9rem; }
+#telnum { right: 30px } 
+#header .user .user_menu { right: 120px }
+#header .util .search { right: 170px }
+#header .util .e_btn { right: 30px }
+#header .user .logIn, .logOut, .signUp, .myPage, .admin {width: 70px;right: 100px}
+
+/* 컨트롤 페이징 부분 */
+.pic_lt .ts-controls { display: none;text-align:center; }
+.pic_lt .ts-controls button { display:none }
+.pic_lt .ts-controls button.ts-paging-btn { display:inline-block; margin:0 3px; position:static; width:100%; background:none; width:20px; height:20px; border:1px solid #333; border-radius:50% }
+.pic_lt .ts-controls button.ts-paging-btn.ts-paging-active { background:#333 }
+    
+/* 메인페이지 컨텐츠 부분 */
+#main_visual .slider h2 { margin: 30vh 0 0 0; }
+#main_visual .roll { padding: 0 30px }   
+#main_visual .roll02 { background-position: center 100px }
+    
+/* 서브페이지 부분 */
+#contents { margin:50px 0 0 0 }
+
+.history_list { padding:0 4% }
+.tbl_head01 td, .tbl_head01 th { padding:14px 8px !important }
+#bo_list .td_num2 { width:50px }
+.td_thumb { width:150px }
+#bo_list .td_datetime { width:80px }
+#bo_gall .gall_info .gall_view { display:none }
+#faq_sch .frm_input, #faq_sch .btn_submit { height:40px }
+#bo_v iframe { width: 100%; height:43vw }
+#sch_res_detail select, #sch_res_detail select { width:120px }
+#sch_res_detail .sch_wr { width:calc(100% - 380px) }
+#rightQuick { display:none }
+    
+/* 개인정보처리방침 서비스 이용약관 공통*/
+#ctt_con div.pv_tt{ width:25%; font-size:1.3rem; font-weight:500; text-align:center; margin:0px 37.5% 60px; padding-bottom:10px; border-bottom:2px solid #333; } /* 타이틀 */
+/*서비스 이용약관*/
+#ctt_con div.pv_tt_2{ width:80%; font-size:1.3rem; font-weight:500; text-align:center; margin:0px 10% 60px; padding-bottom:10px; border-bottom:2px solid #333; } /*타이틀*/   
+    
+    
+}
+
+
+/*==================================================================================================================================================================================*/
+
+
+
+/* (공통 기본 pc버전 1920px) 태블릿(기준: 아이패드) 가로 버전 사이즈, 최대 1024px 화소까지 적용 */
+@media (max-width:1024px) {
+    
+.tb_no { display: none }
+    
+#logo_dna img{ height:60px; top:22px; }
+#telnum{ top:26px; right:30px; }
+#telnum p{ margin-bottom: 8px; }
+#telnum a{ font-size: 1.05rem; }
+#telnum .material-icons{ font-size: 1.3rem; }
+    
+/* 헤더 부분 : 1024px부터 메뉴 겹쳐서 사라지는 현상 발생 -> 768px부터 적용되던 UI 적용 220105 전산팀 yr */ 
+    
+/* 768px UI 적용 전 
+#header .gnb .depth1 { padding: 0 20px }
+#header .gnb .depth1 > a { font-size: 1.2rem }
+#header .gnb .depth2 > a {font-size: 0.95rem}
+#header .gnb .depth1:nth-child(2) .depth2:nth-child(2) a {font-size: 0.7rem}
+#header .util .search { right: 15% }
+#header .user .user_menu { right: 11% }
+*/
+    
+    
+/* pc버전 display:none / 모바일버전 display:block */ 
+#header .pc_only { display:none !important }
+#header .mobile_no { display:none !important }
+#header .mobile_only { display:block !important }
+    
+/* 헤더 */    
+#header { height:70px !important }
+#header .m_util_wrap { width: 100%;height: 70px;line-height: 2em }
+#header .btn_gnb { position:absolute; top:20px; right: 30px; font-size:22px; z-index:10 }
+#header .btn_gnb.on { color:#fff; transform:rotate(-90deg) }    
+#header .btn_user { position:absolute; right:78px; top:20px }
+#header .btn_search { position:absolute; right:130px; top:20px }
+#header .e_btn { position: absolute; top: 23px;right: 182px; line-height: 23px; }
+
+#header .e_btn .material-icons { font-size: 1.9em;margin-right: 3px;vertical-align: top;  }
+#header .btn_search .material-icons { font-size: 2em;vertical-align: middle }
+#header .btn_user .material-icons { font-size: 2em;vertical-align: middle }
+    
+#header .dimmed {display: none;position: fixed;top: 100px;left: 0;right: 0;bottom: 0;background-color: rgba(0,0,0,0.8); }
+#header .dimmed.on {display: block;z-index: 1}
+    
+#header .gnb { position:fixed; width:260px; background:linear-gradient(-42deg,#9000ba 0,#e10a0a 100%); height:100%; top:100px; right:-260px; margin:0; float:none; z-index:9; padding-top:100px; transition:all .3s }
+#header .gnb.on { right:0 }
+  
+#header .gnb .depth1 { width: 100%; padding: 0 30px !important; text-align: left; position:relative; }
+#header .gnb .depth1::before{display: none}
+#header .gnb .depth1 > a { height:50px; line-height:50px; display:block }
+#header .gnb .depth1 > a:before { display:none }
+#header .gnb .depth1 i { position:absolute; top:0; right:0; width:60px; height:50px; line-height:50px; text-align:center; z-index:2; padding-right:10px }
+#header .gnb .depth1 ul { height:0; transition:all .3s; background:rgba(0,0,0,0.3); margin:0 -25px; padding:10px 0 10px 40px }
+#header .gnb .depth1.on ul { opacity: 1; height:auto }
+
+#header .gnb .depth2 > a { padding:10px 0; }
+    
+#header.down .gnb a { color: #fff }
+#header.down .gnb .depth1 > a { margin-bottom:0 }
+#header.down .gnb .depth1:hover > a { color:#fff }
+    
+#header.on { background:#fff }
+#header.on .gnb { margin:0 }
+#header.on .gnb a { color:#fff }
+#header.on .btn_user, #header.on .btn_search { margin-top:0 }
+    
+#header .sns { float:none; text-align:center; margin:30px 0 0 0 }
+#header .sns li { float:none; display:inline-block; margin:0 10px }
+
+.hd_sch_wr .box { width:96% }  
+    
+    
+    
+/* 푸터 부분 */
+#footer .footer_wrap { grid-template-columns:auto }
+#footer .footer_logo { display:none }
+    
+#footer .f_left { margin:30px 0 10px }
+#footer .f_left .mobile_logo { display:block }
+#footer .f_left .address { border-top:1px solid #e0e0e0;padding-top:10px }
+
+#footer .f_right { grid-column:1 / 2;margin:0 0 30px;background:inherit }
+#footer .f_right .cs_area { width:100%;height:auto;padding:0 }
+#footer .f_right span, #footer .f_right strong { display:inline-block;padding:0 6px 0 0 }
+#footer .f_right strong { font-size:inherit;margin:0 }
+    
+    
+/* 메인페이지 컨텐츠 부분 */ 
+#main_visual .slider h2 { font-size: 2.6rem }
+#main_visual .slider p { font-size: 1.3rem }
+    
+.main_cert h2 { font-size: 1.15rem }
+.main_cert h2 span { font-size: 0.9rem }
+    
+.main_bbs section { margin:0 10px; width:calc(100%/3 - 13.4px) }
+.lat .lat_title { font-size: 1.15rem }
+    
+.main_about .text .animatedParent { padding: 35px 0px 30px 30px }
+.main_about .cs .cs_area .title { font-size: 1.15rem }
+.main_about .cs .cs_area .tel small { font-size: 16px }
+    
+.main_focus .main_focus_title p { font-size: 1rem }
+.main_focus_con .main_focus_icon_wrap li a { padding: 267px 32px 64px }
+.main_focus_con .main_focus_icon_wrap li .more_area { margin-top: 74px }
+.main_focus_con .main_focus_icon_wrap li:nth-child(3) .more_area { margin-top: 94px }
+.main_focus_con .main_focus_icon_wrap li:nth-child(4) .more_area { margin-top: 94px }
+.main_focus_con .main_focus_icon_wrap li a .li_tit { font-size: 1.15rem }
+
+.main_company .main_company_title p { font-size: 1rem }
+.main_company .main_company_con_wrap li .con_text .con_tit { font-size: 1.15rem;margin-bottom: 41px }
+.main_company .main_company_con_wrap li:nth-child(2) .enter { left: 300px }
+.main_company .main_company_con_wrap li:nth-child(3) .enter { left: 300px }
+.main_company .main_company_con_wrap li .con_text{ top:30px; }
+
+.main_product .tab_menu p { font-size: 1rem }
+
+    
+/* 서브페이지 부분 */ 
+.left_snb h2 { font-size: 1.2rem }
+.left_cs h2{ font-size: 1.2rem }
+    
+#ctt_con { font-size:1.12em }
+#ctt_con.sub01_01 .sec01 .img01 { width:35% }
+#ctt_con.sub01_01 .sec01 > div { width:60% }
+#ctt_con.sub01_02 .tab_menu a { font-size:30px }
+.history_list { padding:0 }
+.history_list > ul > li { width:48.5%; margin-top:40px }
+#bo_gall .gall_li { width:calc(100%/3 - 10.1px) }
+#bo_gall .gall_li:nth-child(4n + 1) { clear:none }
+#bo_gall .gall_li:nth-child(3n + 1) { clear:none }
+#bo_gall .gall_img:hover img { transform:none }
+#bo_gall.listtype .gall_img + div { padding:15px 30px }
+#bo_gall.listtype .bo_tit { font-size:1.6em }
+#bo_gall .gall_list_con { max-height:38px; overflow:hidden; margin-top:5px }
+#bo_v_act { margin:40px 0 !important }
+#bo_v_desc { margin-top:40px }
+.bo_v_nb { margin: 30px 0 }
+#bo_vc_empty { padding:40px 0 !important }
+#bo_v_con { min-height:50px }
+#bo_v_info .sv_member, #bo_v_info .sv_guest, #bo_v_info .member, #bo_v_info .guest, #bo_vc .member, #bo_vc .guest, #bo_vc .sv_member, #bo_vc .sv_guest { font-size:1.2em }
+#bo_list .td_datetime { width:60px }
+#bo_list .td_name { width:90px }
+#captcha.m_captcha #captcha_key { height:40px; margin-top:5px }
+#captcha.m_captcha #captcha_img { display:inline-block; width:120px; height:40px; }
+#captcha.m_captcha #captcha_reload { margin-top:5px }
+td .thumb { width:150px }
+td .thumb ~ div { margin-left:170px }
+#bo_v iframe { width: 100%; height:52vw }
+#sch_res_board a { min-width:0; padding:0; height:auto; line-height:1; margin:3px 10px; border:0; font-size:13px }
+#sch_res_board .sch_on { border:0 }
+.bo_v_nb li a { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; display:inline-block; width:calc(100% - 120px); vertical-align:top }
+ 
+/* 개인정보처리방침 서비스 이용약관 공통*/
+#ctt_con div.pv_tt { width:40%; font-size:1.3rem; font-weight:500; text-align:center; margin:0px 30% 60px; padding-bottom:10px; border-bottom:2px solid #333; } /* 타이틀 */
+
+#ctt_con div.pv_txt_indent { font-size:0.98rem; margin-left:25px; } /* 들여쓰기 문단 */
+
+/*서비스 이용약관*/
+#ctt_con div.pv_tt_2 { width:90%; font-size:1.1rem; font-weight:500; text-align:center; margin:0px 5% 60px; padding-bottom:10px; border-bottom:2px solid #333; } /*타이틀*/    
+    
+    
+/* ---------- GPC 채용공고 220125 YR ---------- */
+.content_wrap_recruitment_eng .pc_only { display:none; }
+.content_wrap_recruitment_eng .sec_tt { font-size:1.2rem; }
+.content_wrap_recruitment_eng .step_list { font-size:0.95rem; }
+
+.content_wrap_recruitment_eng .top_box { background:url(/theme/gpcert/company/images/Recruitment_image/top_bg.png) no-repeat center; background-size:cover; height:500px; }
+.content_wrap_recruitment_eng .top_txt_box { padding: 4rem 8%; margin-bottom:140px; font-size:2.2rem; line-height:3.5rem; }
+.content_wrap_recruitment_eng .top_txt_box_2 { font-size:1.2rem; font-weight: 400; }
+    
+.content_wrap_recruitment_eng .content_box { font-size:0.9rem; }
+.content_wrap_recruitment_eng .content_box>ul { padding: 4rem 6%; }
+
+.content_wrap_recruitment_eng .sec_txt .gpc_info { font-size:1rem; margin-bottom:4rem; }
+.content_wrap_recruitment_eng .sec_01 .sec_tt_en { font-size:1.1rem; margin-bottom:30px; }
+.content_wrap_recruitment_eng .sec_01 table th { font-size:1rem; }
+
+/* 절차 레이아웃 변경 */
+.content_wrap_recruitment_eng .sec_02 .step_box>div .big { font-size:1.3rem; margin:10px 0 3px; color:#201e1e; }
+.content_wrap_recruitment_eng .sec_02 .step_box .circle { width:100%; }
+.content_wrap_recruitment_eng .sec_02 .step_box .circle:before { display: none; }
+.content_wrap_recruitment_eng .sec_02 .step_box .circle .content { position: static; border: 1px solid #b91904; background:#f9f9f9; border-radius: 25px; height: 90px; font-size: 1.1rem; color:#201e1e; }
+.content_wrap_recruitment_eng .sec_02 .step_box .border_gray .content { border:1px solid #bbb; }
+.content_wrap_recruitment_eng .sec_02 .step_box .bg_red .content { background:#b91904; color:#fff; }
+.content_wrap_recruitment_eng .sec_02 .step_box .bg_red .content .big { color:#fff; }
+.content_wrap_recruitment_eng .sec_02 .step_box>div.arrow { width: 100%; background-size: 3.5%; height: 50px; margin: 10px auto; transform: rotate( 90deg ); }
+
+.content_wrap_recruitment_eng .sec_05 .sec_05_box>div>p:first-child { margin-top:1.2rem; }
+.content_wrap_recruitment_eng .sec_05 .sec_05_box { padding:30px 0%; }
+.content_wrap_recruitment_eng .sec_05 .sec_05_box .top_icon_box, .content_wrap_recruitment_eng .sec_05 .sec_05_box .btm_icon_box { height: 12rem; }
+.content_wrap_recruitment_eng .sec_05 .sec_05_box>div .txt { font-size:0.85rem; }
+    
+.content_wrap_recruitment_eng .bottom_box { height:180px; }
+.content_wrap_recruitment_eng .bottom_box img { width:10%; margin: 70px 45%; }
+    
+/* ---------- GPC 채용공고 종료 220125 YR ---------- */
+    
+}
+    
+/*==================================================================================================================================================================================*/    
+
+
+/* (공통 기본 pc버전 1920px) 태블릿(기준: 아이패드) 세로 버전 사이즈, 최대 768px 화소까지 적용 */
+@media only screen and (max-device-width : 768px) and (-webkit-min-device-pixel-ratio: 1) {
+    
+/* pc버전 display:none / 모바일버전 display:block */ 
+.pc_only { display:none !important }
+.mobile_no { display:none !important }
+.mobile_only { display:block !important }
+
+/* 헤더 */  
+#header .btn_user { position:absolute; right:75px; top:20px }
+#header .btn_search { position:absolute; right:120px; top:20px }
+#header .e_btn { position: absolute; top: 23px;right: 170px; line-height: 25px; }
+    
+    
+/* 푸터 */
+#footer { padding:0 0 60px }
+    
+/* 메인페이지 컨텐츠 부분 */
+#main_visual { height:auto }
+#main_visual .bx-wrapper { height:640px }/* 태블릿버전 화면의 세로 비율 맞춤 변경일: 20210827 HJ */
+#main_visual .slider h2 { margin: 25vh 0 0 0;font-size: 2rem }
+#main_visual .slider p { font-size: 1.1rem }
+    
+.main_cert h2 { padding: 30px 0 }
+    
+.main_about .bg { background-position: center}
+.main_about .text h2 { font-size: 1.35rem; padding-top: 0 !important;margin: 0 0 30px }
+.main_about .text p { font-size: 1rem }
+.main_about .text .animatedParent { padding: 30px 0px 30px 30px }
+.main_about .cs { width: 100%; margin: 40px 0 0 }
+.main_about .cs .cs_area { float: none }
+.main_about .cs .cs_area::before { display: none }
+.main_about .cs .cs_area .tel { font-size: 1.35rem }
+.main_about .cs .cs_area .tel small { margin: 0 }
+.main_about .btn_area a { width: 120px; margin: 5px 10px 0 0;font-size: 1em;font-weight: 500 }
+  
+.main_focus .main_focus_title { margin-top: 30px;z-index: 1 }
+.main_focus .main_focus_title h2 { font-size: 1.35rem }
+.main_focus .main_focus_title p { padding: 20px 0 0; font-size:0.8rem; line-height:1.4; }
+.main_focus_con .main_focus_icon_wrap li { height: 580px }
+.main_focus_con .main_focus_icon_wrap li::before { height: 550px }
+.main_focus_con .main_focus_icon_wrap li a { padding: 166px 20px 52px }
+.main_focus_con .main_focus_icon_wrap li .more_area { margin-top: 54px }
+.main_focus_con .main_focus_icon_wrap li:nth-child(2) .more_area { margin-top: 54px }
+.main_focus_con .main_focus_icon_wrap li:nth-child(3) .more_area { margin-top: 60px }
+.main_focus_con .main_focus_icon_wrap li:nth-child(4) .more_area { margin-top: 104px !important }
+.main_focus_con .main_focus_icon_wrap li .more_area .more { font-size: 1em }
+    
+.main_company .main_company_title h2 { font-size: 1.35rem;padding-top: 30px }
+.main_company .main_company_title p { padding: 20px 0 0; font-size:0.8rem; line-height:1.4; }
+.main_company .main_company_con_wrap { margin: 20px 0 30px }
+.main_company .main_company_con_wrap li:nth-child(1) .enter { display:none; }
+.main_company .main_company_con_wrap li:nth-child(2) .enter { display:none; }
+.main_company .main_company_con_wrap li:nth-child(3) .enter { display:none; }
+.main_company .main_company_con_wrap li .con_text { top: 20px }
+.main_company .main_company_con_wrap li .con_text .con_tit { margin-bottom: 21px }
+.main_company .main_company_con_wrap li .con_text .con_tit::before { bottom: -13px }
+.main_company .main_company_con_wrap li .con_text p { font-size: 0.8rem; }
+
+.main_company .main_company_con_wrap li.small_img_box { margin-bottom: 12px }
+ 
+.main_product { padding: 30px 0 12px }
+.main_product h2 { font-size: 1.35rem }
+.main_product .tab_menu p { padding: 20px 0 0; font-size:0.8rem; line-height:1.4;  }
+
+.main_product .tab_menu li a { background:transparent }
+.main_product .tab_con { margin-top:20px }
+.main_product .pic_lt .ts-controls { text-align:left }
+.pic_lt .ts-controls button.ts-paging-btn { margin:3px }
+    
+.pic_lt #touchSlider { min-height: 189px !important }
+
+.main_gallery { padding-top:40px }
+.main_gallery h2 { font-size:1.6em; padding:0; margin:0 0 20px }
+.tab_menu li a { padding:0; margin:0; border:0 }
+.main_gallery .tab_con { margin-top:30px }
+.main_bbs { padding:0 0 25px }
+.main_bbs .wrap { padding:0 }
+.main_bbs section { width:100%; border-top:1px solid #e0e0e0; padding:30px 30px 0;margin: 0 }
+.main_bbs section:first-child { margin:0; border:0; }
+.main_bbs .lat .lt_more { right:20px; top:20px }
+
+.root_daum_roughmap .wrap_map { height:250px !important }
+
+#sub_visual { height:400px; } /*모바일 높이 조정 ~641px 210824 전산팀 yr*/
+#sub_visual h2 { font-size:1.8rem; padding-top:265px } /*폰트사이즈 단위 rem 통일 및 상단 여백 조정 210824 전산팀 yr*/
+#sub_visual h2:after { bottom:-18px }
+
+#snb .depth1 > li { width:calc(50% + 1px) }
+#snb .depth1 > li:first-child { display:none; }
+#snb .depth1 > li:nth-child(2) { border-left:0 }
+
+/* 상세페이지 탭메뉴 시작 */
+#contents { min-height:300px; margin:0 }
+    
+/*.tab_menu.tab02 ul { margin:0 0 0 -3px }
+.tab_menu.tab02 ul li { float:left; width:calc(100%/2 - 3.1px); }
+.tab_menu.tab02 ul li a { margin:0; padding:10px 0; display:block;line-height: 1.5 }      */
+/* 상세페이지 탭메뉴 종료 */    
+    
+#left_area { float:none; width:100%; margin:0 auto }
+/* 200327 islro 좌측메뉴 fix 해제 */
+#left_area.fix { position:static }
+
+#snb { border:0 }
+.left_snb { text-align:justify; border-bottom:1px solid #e0e0e0 }
+.left_snb h2 { display:none }
+.left_snb ul { margin:2px 0 0 1px }
+.left_snb li { float:left; width:calc(100%/2 + 1px); margin:-1px 0 0 -1px }
+.left_snb li a { text-align:center; border:1px solid #e0e0e0; }
+.left_snb li a:after { width:100%; background:#fff; right:0; top:auto; transform:none; bottom:0 }
+.left_snb li:hover a { background:#fff }
+.left_snb li.on a { border-color:#d63217; position:relative; z-index:1 }
+.left_snb li.on a:after { display:none }
+.left_cs { display:none }
+
+#right_area { width:100%; float:none; padding:50px 0 0; min-height:inherit } /*서브페이지 하단 여백 0px로 변경 210823 전산팀 yr*/
+
+
+    
+    
+#bo_cate { margin-top:0 }
+#bo_cate a { min-width:0; padding:0; height:auto; line-height:1; margin:3px 10px; border:0; font-size:13px }
+#bo_cate #bo_cate_on { border:0 }
+#bo_gall #gall_ul { margin:10px 0 0 0; }
+#bo_gall .gall_li { width:100%; float:none; margin-left:0; margin-bottom:15px }
+#bo_gall .bo_tit { white-space:normal }
+#bo_v_item #bo_v_img { float:none; width:100%; margin-top:5px }
+#bo_v_item #bo_v_summary { float:none; width:100%; margin:30px 0 0 0 }
+#bo_v_summary .bo_v_title { font-size:1.5em }
+#bo_v_summary .bo_v_title small { font-size:0.6em }
+#bo_v_summary, #bo_v_desc { font-size:1em }
+#bo_v_summary .refer { margin:12px 0 0 0 }
+#bo_v_sns li a { width:50px; height:50px; line-height:50px }
+#bo_v_share .btn { width:50px; height:50px; font-size:11px }
+#bo_v_share .btn i { margin:8px 0 0 0 }
+#bo_v_share { padding:25px 0 }
+.bo_v_nb { margin:20px 0 }
+#bo_v_desc { margin-top:30px }
+.bo_vc_w_info .frm_input { width:49.5%; margin:0 }
+.bo_vc_w_info #wr_password { float:right }
+#bo_vc article .pf_img { display:none }
+#bo_v_info .sv_member, #bo_v_info .sv_guest, #bo_v_info .member, #bo_v_info .guest, #bo_vc .member, #bo_vc .guest, #bo_vc .sv_member, #bo_vc .sv_guest { font-size:1.1em }
+#bo_gall.listtype .gall_img { float:none; width:100% }
+#bo_gall.listtype .gall_img + div { float:none; width:100%; padding:20px; font-size:1em }
+#bo_gall .bo_tit, #bo_gall.listtype .bo_tit { font-size:1.3em }
+.gall_list_opt dt { min-width:60px; text-align:center }
+.gall_list_opt dt, .gall_list_opt dd { font-size:.95em }
+td .thumb { width:100%; float:none }
+td .thumb ~ div { margin-left:0; margin-top:15px }
+#bo_v_title { font-size:1.3em; font-weight:500 }
+#bo_v_title .bo_v_tit { font-size:1em }
+#bo_v_act { margin:30px 0 !important }
+.bo_v_nb li .nb_tit { padding-right:0; width:65px; vertical-align:top }
+.tbl_head01 td, .tbl_head01 th { font-size:1em }
+#faq_sch .btn_submit { width:70px; }
+#faq_sch .frm_input { width:calc(100% - 75px) }
+#faq_sch .frm_input, #faq_sch .btn_submit { height:36px; font-size:1em }
+#faq_sch { padding:20px; }
+#faq_wrap li { font-size:1em }
+#bo_v_con { font-size:1em }
+#bo_list .td_stat, #bo_v_rel .td_stat { width:80px }
+#bo_list .txt_rdy, #bo_v_rel .txt_rdy { padding:0 5px }
+#bo_list .td_date { width:70px }
+.bo_cate_link { float:none; display:block }
+#bo_v_title .bo_v_cate { display:block; font-size:0.7em }
+.bo_v_com > li { margin-left:0 }
+.bo_sch { width:320px; margin-left:-160px }
+.bo_sch .sch_input { width:240px }
+#sch_res_detail { padding:15px }
+#sch_res_detail select, #sch_res_detail select { width:49.4% }
+#sch_res_detail .sch_wr { width:100%; margin:5px 0 0 0 }
+.switch_field { padding-bottom:0 }
+#sch_res_ov h2 { display:none }
+#sch_res_ov ul { float:none }
+.sch_res_list { font-size:.9em }
+#bo_gall .gall_list_con { max-height:none; margin-top:10px }
+#bo_v_info { margin:0 0 25px }
+#bo_v_con { margin-top:0 }
+#bo_v { font-size:1.05em }
+#bo_list .txt_done, #bo_v_rel .txt_done { font-size:0.9em; padding:0 6px }
+#bo_list .td_stat, #bo_v_rel .td_stat { width:70px }
+.ctt_admin { font-size:13px }
+input.hasDatepicker { width:150px; padding-right:0 !important }
+#bo_v_ans h2 { font-size:1.3em }
+
+ul.faq_list_board { font-size:1em }
+
+#mb_login.mbskin { background: url(/theme/gpcert/img/login.png) no-repeat center; }
+.mbskin .mbskin_box { width:320px; margin: 30px auto 30px; }
+.mbskin .mbskin_logo img { width: 90px;margin-top: 30px; }
+.mbskin .mbskin_copy{ font-size:0.85em;}
+#mb_login #sns_login .txt { font-size:0.85em; padding-left:0 !important }
+#fregister p { padding:10px; line-height:1.3; font-size:1em; height:auto }
+#sns_register h2 { display:none }
+#sns_register .sns-wrap { width:100%; display:block; text-align:center }
+#fregister h2 { font-size:1.1em }
+
+#ctt_con { font-size:1em; overflow:hidden }
+#ctt_con.sub01_01 .sec01 > div { float:none; width:100% }
+#ctt_con.sub01_01 .sec01 h2 { font-size:1.5em }
+#ctt_con.sub01_01 .sec01 .img01 { width:100%; float:none }
+#ctt_con.sub01_01 .sec01 .img01 p { text-align:center }
+#ctt_con h2.title { font-size:1.4em; padding-bottom:20px }
+#ctt_con.sub01_01 th { width:auto }
+#ctt_con.sub01_01 th, #ctt_con.sub01_01 td { padding:12px 7px; word-break:keep-all }
+#ctt_con.sub01_02 .tab_menu a { font-size:16px; border:1px solid #e0e0e0; border-left:0; border-right:0; padding:10px 0; margin:0 }
+#ctt_con.sub01_02 .tab_menu li.on a { border-color:#666 }
+#ctt_con.sub01_02 .tab_menu { margin:0 0 30px }
+
+#ctt_con.sub01_02 .tab_menu { margin:0 }
+#ctt_con.sub01_02 .tab_menu a small { display:none }
+.history_list h3 { font-size:1.9em }
+.history_list li li { background-size:4px 4px; background-position:0 5px; padding-left:10px }
+.history_list > ul > li { width:100%; margin-top:30px }
+.os_mac.root_daum_roughmap .section_address .tit, .os_mac.root_daum_roughmap .section_address .txt { font-size:1em !important }
+
+.request { display:block;width:100%; margin-top:70px }
+.request:after{ content:""; display:block; clear:both;}
+.floating {position:fixed; bottom:0; left:0; z-index:10; background:rgba(0,0,0,0.5);}
+.floating .inner {padding:10px 10px;}
+.btn_col {display:table; table-layout:fixed; width:90%;}
+.btn_col span {display:table-cell; padding:0 3px; vertical-align:top;}
+.btn_col [class*=btn_type] {display:block; width:100%; text-align:center; }
+.btn_type1 {height:40px; line-height:38px; font-size:16px; color:#fff !important; background-color:#000; }
+.btn_type2 {height:40px; line-height:38px; font-size:16px; color:#000 !important; background-color:#fff; border:1px solid #000;}
+    
+/* header, footer===> 1px가 최소이므로 눈에 잘 띄지 않게하려면 선을 연한 회색으로 만들었다 . ^^ . */
+.hr01 {display:block;width:100%;border:0.001rem solid white;position:relative;right:0%;top:0px;text-align:center;}  /* header 하단 구분선  */
+.hr02 {display:block;width:100%;border:0.001rem solid white;position:relative;right:0%;top:-22px;text-align:center;border-color:darkgray;}  /* footer 상단 구분선  */
+.hr03 {border-top: 1px solid #cccccc;display:block;margin-bottom:6px;margin-top:0;width:100%;} /*footer, 관련사이트 위 구분선  */    
+    
+
+/* ---------- GPC 채용공고 220125 YR ---------- */
+    
+.content_wrap_recruitment_eng .sec_tt { margin-bottom:30px; }
+
+.content_wrap_recruitment_eng .top_box { border-radius: 0rem; }
+.content_wrap_recruitment_eng .top_txt_box { padding:3.5rem 6%; padding-left:6% !important; padding-right:6% !important; font-size:2rem; line-height:3.5rem; } 
+    
+.content_wrap_recruitment_eng .content_box>ul { padding:3.5rem 6%; padding-left:6% !important; padding-right:6% !important; }
+.content_wrap_recruitment_eng .sec_txt .gpc_logo { width: 54%; margin: 0 23% 30px; }
+.content_wrap_recruitment_eng .sec_txt .gpc_info { margin-bottom:3.5rem; text-align:justify !important; }
+    
+.content_wrap_recruitment_eng .sec_05 .sec_05_box { padding: 6% 0%; border: 1px solid #bbb; border-radius:25px; background:#f9f9f9; }
+.content_wrap_recruitment_eng .sec_05 .sec_05_box .top_icon_box, .content_wrap_recruitment_eng .sec_05 .sec_05_box .btm_icon_box { flex:none; width: 38%; margin: 0 6% 60px; height:auto; border:none; }
+.content_wrap_recruitment_eng .sec_05 .sec_05_box .none { margin-bottom:0px; }
+.content_wrap_recruitment_eng .sec_05 .sec_05_box>div img { width:50%; }
+.content_wrap_recruitment_eng .sec_05 .sec_05_box>div .txt { margin-top:15px;letter-spacing: -0.1px; }
+
+.content_wrap_recruitment_eng .bottom_box { height:220px; }
+.content_wrap_recruitment_eng .bottom_box img { width:14%; margin: 80px 43%; }
+    
+/* ---------- GPC 채용공고 종료 220125 YR ---------- */
+       
+}
+    
+    
+/*==================================================================================================================================================================================*/
+    
+    
+/* (공통 기본 pc버전 1920px) 모바일(가장 작은 사이즈: SAMSUNG GALAXY S6) 가로 버전 사이즈, 최소 360px ~ 최대 640px 화소까지 적용 */    
+@media all and (max-device-width : 640px) { 
+    
+/* pc버전 display:none / 모바일버전 display:block */   
+#telnum { display: none !important }
+.s_mobile_only { display:block !important }
+.s_mobile_no { display:none !important }
+
+    
+/* 헤더 부분 */
+#logo_dna { height: 0 } 
+#header { top: 0;height: 70px !important }
+#header .gnb { top: 0 }
+#header .dimmed { top: 70px }   
+#header .btn_gnb { top: 20px}
+#header .btn_user { top: 20px }
+#header .btn_search { top: 20px }
+    
+#header .m_util_wrap .m_logo { width: 56px;height: 40px; padding-top: 15px;z-index:10000;}
+#header .m_util_wrap .m_logo a { height: 40px;background: url(../img/m_w_GPC_ci.png) no-repeat;background-size: contain; }
+#header.on .m_util_wrap .m_logo a { height: 40px;background: url(../img/m_GPC_ci.png) no-repeat;background-size: contain }
+    
+/* 푸터 */
+#footer dl{ line-height:1.8; }
+
+.btn_col { width: 85% }
+#footer #top_btn { width: 13.5% }
+
+/* 메인페이지 컨텐츠 부분 */
+#main_visual .slider h2 { font-size: 2rem;margin: 0 }
+#main_visual .roll .roll_wrap { margin: 16vh auto }
+#main_visual .roll02 { background-position: center 70px }
+#main_visual .roll04 { background: url(../img/t_visual04.png) no-repeat -250px 20px;  background-size: cover}
+    
+.main_cert .form_wrap button { margin-left: 5px ! important;padding: 7px 12px ! important; }
+    
+.main_bbs { padding: 0 }
+.main_bbs section { padding: 30px 4% 30px }
+.main_bbs .lat .lt_more { top: 24px;right: 8px }
+    
+.main_about .img{flex:0;width:100%; height:300px;}
+.main_about .text{flex:0;}
+
+.main_about .flex_wrap{display:block;}
+.main_about .text h2 { font-size: 1.3rem; margin: 0 0 25px; }
+.main_about .cs .cs_area .title { font-size: 0.9rem }
+.main_about .text p{ margin: 0 0 15px; }
+.main_about .text .animatedParent { padding: 30px 4% }
+.main_about .btn_area{ text-align:center; }
+.main_about .btn_area a{ margin: 20px 15px 0 0; }
+.main_about .btn_area a:nth-child(2){ margin: 20px 0px 0 0; }
+.main_about .cs .cs_area .tel { font-size: 1.15rem }
+.main_about .cs .cs_area .tel small { font-size: 0.8rem; margin: 0 0 0 0px; display:inline-block;}
+
+.main_focus .main_focus_title { position: relative;left: 0;transform: translateX(0);z-index: 1 }
+.main_focus_con .main_focus_icon_wrap li {width: 100%;height: 100%;padding: 30px 0;}
+.main_focus_con .main_focus_icon_wrap li:nth-child(2) { border-top: 1px solid #e7e7e7;border-bottom: 1px solid #e7e7e7 }
+.main_focus_con .main_focus_icon_wrap li:nth-child(3) { border-bottom: 1px solid #e7e7e7 }
+.main_focus_con .main_focus_icon_wrap li::before {height: 100%}
+.main_focus_con .main_focus_icon_wrap li a {padding: 0}
+.main_focus_con .main_focus_icon_wrap li a .icon_box {display: inline-block;float: left}
+.main_focus_con .main_focus_icon_wrap li a .li_tit { float: right;width: 78%;padding: 0;margin-bottom: 5px;}
+.main_focus_con .main_focus_icon_wrap li a .li_txt { float: right;width: 78% }
+.main_focus_con .main_focus_icon_wrap li .more_area { display: none }
+    
+.main_company .main_company_con_wrap li {width: 100%}
+.main_company .main_company_con_wrap li.big_img_box {margin: 0 0 12px}
+.main_company .main_company_con_wrap li.small_img_box {margin: 0 0 12px}
+.main_company .main_company_con_wrap li .con_text { top:30px; left: 30px; }
+.main_company .main_company_con_wrap li:nth-child(1) .enter {top: 150px}
+.main_company .main_company_con_wrap li:nth-child(2) .enter {top: 150px;left: 30px}
+.main_company .main_company_con_wrap li:nth-child(3) .enter {top: 150px;left: 30px}
+    
+/* 서브페이지 서브비주얼 부분 */  
+#sub_visual { height:300px; } /*모바일 높이 조정 ~641px 210824 전산팀 yr*/
+#sub_visual h2 { font-size:1.6rem; padding-top:170px } /*폰트사이즈 단위 rem 통일 및 상단 여백 조정 210803 전산팀 yr*/
+    
+/* 서브페이지 부분 */
+.tab_menu.tab01 h2::before { width: 20% }
+.tab_menu.tab01 h2::after { width: 20% }
+    
+ /* 개인정보처리방침 서비스 이용약관 공통*/
+#ctt_con div.pv_content { font-size:0.9rem; padding:40px 5%; margin-top:30px; }
+#ctt_con div.pv_tt { width:40%; font-size:1rem; margin:0 30% 40px; } /* 타이틀 */
+#ctt_con div.pv_em { margin:20px 0 30px; padding-bottom:30px; } 
+#ctt_con div.pv_sec { margin-bottom:30px; }/*큰 문단*/
+#ctt_con p.pv_sec_tt { font-size:0.98rem; margin-bottom:15px; }/*큰 문단 속 타이틀*/
+#ctt_con div.pv_txt_indent { font-size:0.88rem; margin-left:15px; } /* 들여쓰기 문단 */
+#ctt_con span.pv_gray { font-size:0.85rem; }
+
+/*서비스 이용약관*/
+#ctt_con div.pv_txt_block_2{ font-size:0.88rem; }/*문단 속 작은 문단*/
+#ctt_con div.pv_tt_2{ width:92%; font-size:1rem; font-weight:500; text-align:center; margin:0px 4% 60px; padding-bottom:10px; border-bottom:2px solid #333; } /*타이틀*/  
+
+/*게시물 첨부파일 박스*/
+#bo_v_file li i { font-size: 1.8em; margin: 4px 12px 0 5px; } 
+#bo_v { font-size:1em; }
+#bo_v_file a{ font-size:0.95em; }
+#bo_v_file .bo_v_file_cnt { font-size: 0.9em; display: block; margin-top: 6px; } 
+    
+
+/* ---------- GPC 채용공고 220125 YR ---------- */
+.content_wrap_recruitment_eng .top_box { height:450px; }
+.content_wrap_recruitment_eng .top_txt_box { padding:3rem 6%; font-size:1.8rem; line-height:3rem; } 
+.content_wrap_recruitment_eng .top_txt_box_2 { font-size:1.1rem; }
+    
+.content_wrap_recruitment_eng .content_bo { font-size:0.85rem; }
+.content_wrap_recruitment_eng .content_box>ul { padding:3rem 6%; }
+.content_wrap_recruitment_eng .content_box>ul>li:not(.sec_05) { margin-bottom: 60px; }
+    
+.content_wrap_recruitment_eng .sec_txt .gpc_info { font-size:0.9rem; }
+.content_wrap_recruitment_eng .sec_01 { overflow:scroll; }
+.content_wrap_recruitment_eng .sec_01 table th, .content_wrap_recruitment_eng .sec_01 table td { padding:12px 1%; }
+.content_wrap_recruitment_eng .sec_01 table th { font-size:0.9rem; }
+.content_wrap_recruitment_eng .sec_05 .sec_05_box { padding:6% 0%; }
+.content_wrap_recruitment_eng .sec_05 .sec_05_box>div .txt { font-size:0.9rem; }
+
+.content_wrap_recruitment_eng .bottom_box { height:180px; }
+.content_wrap_recruitment_eng .bottom_box img { width:16%; margin: 60px 42%; }
+    
+/*_________________________________________________________하단 텍스트 */
+.content_wrap_recruitment_txt .table_wrap { overflow: scroll; }
+.content_wrap_recruitment_txt .rList { margin-left:10px; }
+.content_wrap_recruitment_txt .rList span { position:absolute; top:0px; left:-8px; }
+    
+/* ---------- GPC 채용공고 종료 220125 YR ---------- */
+	
+	
+/* 팝업생성)) 광복절 대체공휴일 안내(2023-08-14 ~ 2023-08-15) CSS 적용 20230810 HJ */
+#hd_pop { top: 120px !important;width: 100%;max-width: 360px;height: 100% }	
+#hd_pops_9 .popup_closed { width: 100%;max-width: 360px;height: auto; }
+#hd_pops_9 .popup_closed .pop_date { width: 80% }
+#hd_pops_9 .popup_closed .popup_calendar_wrap { width: 100%; }
+    
+}
+    
+    
+/*==================================================================================================================================================================================*/
+    
+
+
+/* (공통 기본 pc버전 1920px) 모바일(가장 큰 사이즈: iPhone 6/7/8 Plus) 세로 버전 사이즈, 최소 360px ~ 최대 414px 화소까지 적용 */
+@media all and (min-width:360px) and (max-device-width : 414px) { 
+    
+.wrap { padding: 0 4% }
+    
+/* 헤더 */
+#header .btn_gnb { right: 4% }
+#header .btn_user { right: 12% }
+#header .btn_search { right: 22% }
+#header .e_btn { right: 33% }
+    
+/* 푸터 */
+.btn_col { width: 85% }
+#footer #top_btn { width: 13.5% }
+    
+/* 메인페이지 컨텐츠 부분 */
+#main_visual .bx-wrapper { height:560px }/* 모바일버전 화면의 세로 full사이즈 맞춤 변경일: 20210827 HJ */
+#main_visual .slider h2 { margin: 0;font-size: 1.7rem }
+#main_visual .slider p { font-size: 0.95rem;margin: 10px 0 0 }
+#main_visual .roll .roll_wrap { margin: 14vh auto }
+#main_visual .roll03 { background:url(../img/visual03.png) no-repeat right 30px;background-size: cover; }
+#main_visual .roll04 { background:url(../img/m_visual04.png) no-repeat center;background-size: cover; }
+    
+.main_cert h2 { font-size: 1rem }
+.main_cert h2 span { font-size: 0.85rem }
+.main_cert::before { background: url(../image/m_cert_bg.png);background-repeat: repeat }
+.main_cert .form_wrap input { font-size: 0.8em !important }
+.main_cert .form_wrap button { padding: 9px !important;font-size: 0.8em !important }
+    
+.lat .lat_title { font-size: 1rem }
+    
+.main_about .bg { background: rgba(147,162,191,.25) }   
+.main_about .img { display: none }
+.main_about .text { width: 100% }
+.main_about .btn_area a { width: calc(43% - 10px) }
+.main_about .cs .cs_area .title { font-size: 1rem }
+.main_about .cs .cs_area .tel small { font-size: 12px; display:block; margin-left:0px; margin-top:10px; }
+    
+.main_focus .main_focus_title {position: relative;left: 0;transform: translateX(0)}
+.main_focus_con .main_focus_icon_wrap li {width: 100%;height: 100%;padding: 30px 0;}
+.main_focus_con .main_focus_icon_wrap li:nth-child(2) { border-top: 1px solid #e7e7e7;border-bottom: 1px solid #e7e7e7 }
+.main_focus_con .main_focus_icon_wrap li:nth-child(3) { border-bottom: 1px solid #e7e7e7 }
+.main_focus_con .main_focus_icon_wrap li::before {height: 100%}
+.main_focus_con .main_focus_icon_wrap li a {padding: 0}
+.main_focus_con .main_focus_icon_wrap li a .icon_box {display: inline-block;float: left}
+.main_focus_con .main_focus_icon_wrap li a .li_tit { float: right;width: 70%;padding: 0;font-size: 1rem }
+.main_focus_con .main_focus_icon_wrap li a .li_txt { float: right;width: 70% }
+.main_focus_con .main_focus_icon_wrap li .more_area { display: none }
+    
+.main_company .main_company_con_wrap li::before { opacity: 1;background: rgba(0,0,0,.3) }
+.main_company .main_company_con_wrap li .con_text.black { color: #fff }
+.main_company .main_company_con_wrap li .con_text .con_tit { font-size: 1rem }
+.main_company .main_company_con_wrap li:nth-child(2) .con_text .con_tit::before { background: #fff }
+.main_company .main_company_con_wrap li .con_text { padding: 10px 20px;top: 10px;left: 0 }
+.main_company .main_company_con_wrap li .con_text p { line-height: 1.4;font-size: 0.75rem;font-weight: 300 }
+
+
+/* 서브페이지 부분 */
+#sub_navi li {font-size:0.7rem;}
+#left_area {padding: 20px 0}
+#right_area {padding-bottom:20px;}
+.tab_menu.tab01 { padding: 0;width: 100% }
+.tab_menu.tab01 ul { display: block }
+.tab_menu.tab01 ul li { margin-bottom: 0 }
+.tab_menu.tab01 ul li a { border-right: 1px solid #ccc;color: #999 }
+.tab_menu.tab01 ul li.on a { color: #666;border-bottom: 1px solid #d63217 }
+.tab_menu.tab01 ul li a::before { display: none }
+    
+#bo_v_con .img_box { width: 100% !important;margin: 0px auto 50px; }
+
+
+/* 팝업창 영역 */
+#hd_pop #hd_pops_5 .hd_pops_con { max-width: 360px }
+#hd_pop #hd_pops_5 .hd_pops_con .only_mobile { display: block }
+#hd_pop #hd_pops_5 .hd_pops_con .holiday { line-height: 1.6 !important }
+
+
+/* 개인정보처리방침 서비스 이용약관 공통*/
+#ctt_con div.pv_tt{ width:50%; font-size:1rem; margin:0 25% 40px; } /* 타이틀 */
+
+
+/*게시물 첨부파일 박스*/
+#bo_v_file li i { font-size: 1.5em; margin: 8px 10px 0 5px;} 
+#bo_v_file a{ font-size:0.85em; }
+#bo_v_file .bo_v_file_cnt { font-size: 0.8em; display: block; margin-top: 6px; } 
+
+
+/* ---------- GPC 채용공고 220125 YR ---------- */
+.content_wrap_recruitment_eng mobile_no { display:none; }
+.content_wrap_recruitment_eng .center { text-align:justify !important; }
+    
+.content_wrap_recruitment_eng .sec_tt { font-size:1.1rem; }
+.content_wrap_recruitment_eng .step_list { font-size:0.9rem; }
+.content_wrap_recruitment_eng .step_list li { font-weight:400; }
+    
+.content_wrap_recruitment_eng .top_txt_box { font-size:1.5rem; line-height: 2.6rem; margin-bottom:160px; }
+.content_wrap_recruitment_eng .sec_txt .gpc_logo { width:80%; margin:0 10% 30px; }
+.content_wrap_recruitment_eng .sec_02 .step_box .circle .content { border-radius:15px; font-size:1rem; height:80px; }
+.content_wrap_recruitment_eng .sec_02 .step_box>div .big { font-size:1.2rem; }
+.content_wrap_recruitment_eng .sec_02 .step_box>div.arrow { height:35px; }
+    
+.content_wrap_recruitment_eng .sec_05 .sec_05_box>div img { width:60%; }
+
+.content_wrap_recruitment_eng .bottom_box { height:150px; }
+.content_wrap_recruitment_eng .bottom_box img { width:18%; margin: 50px 40%; }
+    
+/* ---------- GPC 채용공고 종료 220125 YR ---------- */
+    
+}
+

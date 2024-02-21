@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>PHP에서 FORM과 POST</title>
+</head>
+<body>
+    <h5>서버로 데이터를 전송할 때 사용하는 HTML의 기능인 form을 살펴본다. 또, URL을 통하지 않고 은밀하게 데이터를 전송하는 방법인 POST 방식도 알아본다. </h5>
+    <h5>이번 시간에는 form태그에 대해서 배웠어요. form태그는 서버의 지정된 경로로 데이터를 전송하는 태그 같네용! 그리고 그 아래에 input type="text"(내용입력 부분) input type="submit"(전송확인 버튼) 같은 추가태그로 문서 작성 폼을 만들어 데이터를 입력 시키고 form을 통해서 전송하나봐요! 그런데 form태그는 보내는 데이터를 공개적으로 보내는 get방식이 있고 비밀리에 보내는 post방식이 있나봅니다. get방식은 url을 변화시킬 수 있으므로 북마크와 연계해서 각각 다른 페이지를 띄워줄때 유용하구요.post방식은 url변형 없이 비공개로 값을 전송해서 게시판에 글 같은 것을 작성할때 유용한 것 같습니다.</h5>
+    <h5>위험 하지만 학습용 환경에서하면 sudo chmod 777 data 명령을 써보세요~</h5>
+    <form action="form.php" method="get">
+      <p><input type="text" name="title" placeholder="Title" height="20px"></p>
+      <p><textarea name="description" id="" cols="" rows="" height="20px"></textarea></p>
+      <p><input type="submit"></p>
+    </form>
+    
+</body>
+</html>

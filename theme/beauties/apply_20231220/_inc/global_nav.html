@@ -1,0 +1,132 @@
+		<div class="cnts_wrap sitemap obj_sitemap">
+			<div class="container">
+				<ul>
+					<li class="only">
+						<a href="<?=$_SET['Path']['root']?>/">메인</a>
+<?php if( $_SET['isLogin']['member'] == 1 ) { ?>
+						<a onclick="setLogout();">로그아웃</a>
+<?php } else { ?>
+						<a href="<?=$_SET['Path']['root']?>/membership/login.html">로그인</a>
+						<a href="<?=$_SET['Path']['root']?>/membership/join.html">회원가입</a>
+<?php } ?>
+						<!--div class="subs">
+							<a>아이디찾기</a>
+							<a>비밀번호찾기</a>
+						</div-->
+					</li>
+					<li>
+						<a>메뉴</a>
+						<div class="subs">
+							<a href="<?=$_SET['Path']['root']?>/pann/list.html">L라운드</a>
+							<a href="/lmap?menu=restaurant">TV맛집</a>
+							<!--a>테마투어</a-->
+							<a href="/lmap?menu=today">오늘어디갈까</a>
+							<a href="/lmap?menu=lotto">로또명당</a>
+							<a href="/lmap?menu=toilet">공개화장실</a>
+							<a href="/lmap?menu=bunyang">분양/임대</a>
+						</div>
+					</li>
+					<li>
+						<a>L홈</a>
+						<div class="subs">
+							<a href="<?=$_SET['Path']['root']?>/myhome/">알림</a>
+							<a href="<?=$_SET['Path']['root']?>/myhome/pann.html">마이L라운드</a>
+							<a href="<?=$_SET['Path']['root']?>/myhome/friends.html">친구</a>
+							<a href="<?=$_SET['Path']['root']?>/myhome/scrap.html">스크랩</a>
+							<!--a>L스팟</a>
+							<a>한줄평</a-->
+						</div>
+					</li>
+					<li>
+						<a>내 설정</a>
+						<div class="subs">
+							<a href="<?=$_SET['Path']['root']?>/me/profile.html">개인정보 관리</a>
+							<a href="<?=$_SET['Path']['root']?>/membership/myhome.html">L홈 관리</a>
+							<a href="<?=$_SET['Path']['root']?>/membership/security.html">보안설정</a>
+							<!--a href="<?=$_SET['Path']['root']?>/membership/qna.html">1:1문의 내역</a-->
+						</div>
+					</li>
+					<li>
+						<a>L가이드</a>
+						<div class="subs">
+							<a href="<?=$_SET['Path']['root']?>/guide/notice.html">공지사항</a>
+							<a href="<?=$_SET['Path']['root']?>/guide/update.html">업데이트 알림</a>
+							<a href="<?=$_SET['Path']['root']?>/guide/policy.html">이용약관</a>
+							<a href="<?=$_SET['Path']['root']?>/guide/provider.html">자료의출처</a>
+						</div>
+					</li>
+					<li>
+						<a>고객센터</a>
+						<div class="subs">
+							<!--a>자주하는 질문</a-->
+							<a>FAQ(준비중)</a>
+							<a href="<?=$_SET['Path']['root']?>/cscenter/qna.html">이용문의</a>
+							<a href="<?=$_SET['Path']['root']?>/cscenter/advertiser.html">광고문의</a>
+							<a href="<?=$_SET['Path']['root']?>/cscenter/partner.html">제휴문의</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!--div class="container">
+				<ul>
+					<li>
+						<a>리빙판</a>
+						<div class="subs">
+							<a>일상</a>
+							<a>취미</a>
+							<a>문화</a>
+							<a>생활</a>
+							<a>정치/사회</a>
+							<a>비밀보장</a>
+						</div>
+					</li>
+					<li>
+						<a>TV맛집</a>
+						<div class="subs">
+							<a>방송맛집</a>
+							<a>스타맛집</a>
+							<a>추천맛집</a>
+							<a>기타</a>
+							<a>식객</a>
+							<a>식신로드</a>
+							<a>기타</a>
+						</div>
+					</li>
+					<li>
+						<a>테마투어</a>
+						<div class="subs">
+							<a>역사관광</a>
+							<a>유명지/촬영지</a>
+							<a>체험관광</a>
+							<a>기타관광</a>
+						</div>
+					</li>
+					<li>
+						<a>오늘어디갈까</a>
+						<div class="subs">
+							<a>축제</a>
+							<a>공연</a>
+							<a>전시회</a>
+							<a>박람회</a>
+							<a>기타</a>
+						</div>
+					</li>
+					<li>
+						<a>이런건어때</a>
+						<div class="subs">
+							<a>로또명당</a>
+							<a>개방화장실</a>
+						</div>
+					</li>
+					<li>
+						<a>분양/임대</a>
+						<div class="subs">
+							<a>민간분양</a>
+							<a>공공임대</a>
+							<a>공공상가</a>
+							<a>공공기타</a>
+						</div>
+					</li>
+				</ul>
+			</div-->
+		</div>

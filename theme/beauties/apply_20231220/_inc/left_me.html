@@ -1,0 +1,20 @@
+<?php
+$tmp_pn_ary = explode('_',$_SET['Nav']['pagename']);
+$tmp_pn = $tmp_pn_ary[0];
+?>
+
+<aside class="lnb">
+	<h2><em>SETTING</em>내 설정</h2>
+	<nav>
+		<ul class="lnb_nav">
+			<li class="<?php echo ($tmp_pn == 'profile') ? 'on' : ''; ?>"><a href="<?=$_SET['Path']['root']?>/me/profile.html">개인정보 관리</a></li>
+			<li class="<?php echo ($tmp_pn == 'myhome') ? 'on' : ''; ?>"><a href="<?=$_SET['Path']['root']?>/me/myhome.html">L홈 관리</a></li>
+			<li class="<?php echo ($tmp_pn == 'security') ? 'on' : ''; ?>"><a href="<?=$_SET['Path']['root']?>/me/security.html">보안설정</a></li>
+			<!--li class="<?php echo ($tmp_pn == 'withdrawal') ? 'on' : ''; ?>"><a href="<?=$_SET['Path']['root']?>/me/withdrawal.html">회원탈퇴</a></li-->
+			<!--li class="<?php echo ($tmp_pn == 'qna') ? 'on' : ''; ?>"><a href="<?=$_SET['Path']['root']?>/me/qna.html">1:1문의 내역</a></li-->
+			<!--li class="<?php echo ($tmp_pn == 'pan') ? 'on' : ''; ?>"><a href="<?=$_SET['Path']['root']?>/me/pan.html">마이리빙판 관리</a></li>
+			<li class="<?php echo ($tmp_pn == 'map') ? 'on' : ''; ?>"><a href="<?=$_SET['Path']['root']?>/me/map.html">마이리빙맵 관리</a></li-->
+		</ul>
+	</nav>
+</aside>
+

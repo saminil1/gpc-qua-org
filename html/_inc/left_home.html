@@ -1,0 +1,16 @@
+<?php
+$tmp_pn_ary = explode('_',$_SET['Nav']['pagename']);
+$tmp_pn = $tmp_pn_ary[0];
+?>
+
+<aside class="lnb">
+	<h2><em>MYHOME</em>마이홈</h2>
+	<nav>
+		<ul class="lnb_nav">
+			<li class="<?php echo ($tmp_pn == 'profile') ? 'on' : ''; ?>"><a href="<?=$_SET['Path']['root']?>/myhome/pan.html">마이리빙판</a></li>
+			<li class="<?php echo ($tmp_pn == 'security') ? 'on' : ''; ?>"><a href="<?=$_SET['Path']['root']?>/myhome/map.html">마이리빙맵</a></li>
+			<li class="<?php echo ($tmp_pn == 'review') ? 'on' : ''; ?>"><a href="<?=$_SET['Path']['root']?>/myhome/review.html">리뷰</a></li>
+		</ul>
+	</nav>
+</aside>
+

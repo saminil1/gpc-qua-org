@@ -1,0 +1,18 @@
+<?php
+$tmp_pn_ary = explode('_',$_SET['Nav']['pagename']);
+$tmp_pn = $tmp_pn_ary[0];
+?>
+
+<aside>
+	<h2><em>C/S CENTER</em>고객센터</h2>
+	<nav>
+		<ul class="lnb_nav">
+			<li class="<?php echo ($tmp_pn == 'faq') ? 'on' : ''; ?>"><a href="/cscenter/faq.html">자주하는 질문</a></li>
+			<li class="<?php echo ($tmp_pn == 'qna') ? 'on' : ''; ?>"><a href="/cscenter/qna.html">1:1문의</a></li>
+			<li class="<?php echo ($tmp_pn == 'seller') ? 'on' : ''; ?>"><a href="/cscenter/seller.html">광고/제휴</a></li>
+			<li class="<?php echo ($tmp_pn == 'intro') ? 'on' : ''; ?>"><a href="/cscenter/guide.html">리빙맵 가이드</a></li>
+			<li class="<?php echo ($tmp_pn == 'notice') ? 'on' : ''; ?>"><a href="/cscenter/notice.html">공지사항</a></li>
+		</ul>
+	</nav>
+</aside>
+

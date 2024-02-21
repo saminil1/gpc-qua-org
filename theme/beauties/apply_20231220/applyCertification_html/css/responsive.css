@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+/* ======================================================================= */
+
+/* Media queries CSS */
+@media (min-width: 768px) {
+    .col-md-12 { flex: 0 0 100%;max-width: 100%; }
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .col-md-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .tablet_none { display: none; }
+    .tablet_block { display: block; }
+
+    .theme-col-2 .theme-box, .theme-col-3 .theme-box, .theme-col-4 .theme-box, .theme-col-5 .theme-box {
+        flex: 0 0 50%;
+        width: 50%;
+    }
+
+    h3 { font-size: 6.8vw; }
+    h4 {}
+    h4::after { left: 50%;transform: translateX(-50%); }
+
+    .theme-iconnav { display: none; }
+
+    .mobcenter1 { text-align: center!important; }
+
+
+    #main-navigation .col-md-12 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .menu-bar { display: block;padding-left: 15px;padding-right: 15px; }
+    .menu-bar a.show-menu { padding: 0; }
+    .main-menu>.home-item { display: none; }
+    .main-menu>.lang-item { float: none; }
+    .main-menu { touch-action: pan-y;display: none; }
+    .main-menu>li { float: none; }
+    .main-menu>li ul, .main-menu>li ul ul {
+        position: relative;
+        width: 100%;
+        left: auto;
+        right: auto;
+        top: 0;
+        -webkit-box-shadow: 0 0 0 0 transparent;
+        -moz-box-shadow: 0 0 0 0 transparent;
+        -ms-box-shadow: 0 0 0 0 transparent;
+        box-shadow: 0 0 0 0 transparent;
+    }
+    .main-menu>li>a { padding: 1rem 1.5rem;height: auto;line-height: inherit;border-top: solid 1px #313f49; }
+
+    .lang-flag { left: 15px; }
+    .lang-fullname { display: inline-block;padding: 0 0 0 10px; }
+    .lang-shortname {display: none;}
+
+    .mobile-arrow {
+        display: block;
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin-top: -18px;
+        text-align: center;
+        font-size: 18px;
+    }
+    .mobile-arrow:before {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: '\f107';
+    }
+    .mobile-arrow.active:before {
+        content: '\f106';
+    }
+    .main-menu .dropdown>a:after { display: none; }
+    tbody, td, tfoot, th, thead, tr { display: block;height: auto; }
+    #form01 table.type01 tbody th { width: 100%; }
+    #form01 table.type01 ul.chk li { flex-basis: 50%; }
+
+    .modal_wrap { width: 90%; }
+
+    #form01 table.type01 tbody td.tint_th { border: none; }
+    #form01 table .tint_th.bollotBox { position: relative; }
+    #form01 table .tint_th.bollotBox::before { display: block; }
+
+    #form01 table.type01 tr .tint_th { padding: 16px 0 0 20px; }
+    #form01 table.type01 tr:nth-child(2) .tint_th { padding: 0 0 0 20px; }
+    #form01 table.type01 tr:nth-child(5) td { border: none; }
+
+    table.list colgroup col { width: auto !important; }
+    table.list tr.list_type01 { 
+        height: 45px;
+        overflow: hidden;
+        text-align: left;
+    }
+    table.list tr.list_type01.show { height: auto; }
+    table.list td { position: relative;width: 100%; }
+    table.list td.tal { background: #f7f7f7; }
+    table.list td.view_button { padding: 1rem 0 2rem 0; }
+    table.list td.custom_name { font-weight: 600; }
+    table.list td.custom_name.active { color: #0d6efd; }
+    table.list .list_typeN { display: inline-block;padding: 0 6px 0 0; }
+    .plus-btn { display: none; }
+
+    table.respncv_none tbody, table.respncv_none td, table.respncv_none tfoot, table.respncv_none th, table.respncv_none thead, table.respncv_none tr { display: revert; }
+
+}
+
+@media only screen and (max-width: 480px) {
+    .mobile_none { display: none; }
+
+    .theme-col-2 .theme-box, .theme-col-3 .theme-box, .theme-col-4 .theme-box, .theme-col-5 .theme-box {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    /* 회사안내 > 회사소개 > OUR BUSINESS */
+    .con_business { margin: 0; }
+    .con_business .business_tt { margin-top: 2rem; }
+    .con_business .business_txt { 
+        flex-direction: column;
+        padding: 0 0 2rem;
+        border-bottom: 1px solid #ddd;
+    }
+    .con_business .business_txt:nth-child(6) { border: none; }
+    .con_business .circle_box { order: 1;margin: 1rem auto; }
+    .con_business .text_box { order: 2; }
+
+    /* 심사원시험 > ISO 9001 */
+    .btn-curi { text-align: center; }
+
+}

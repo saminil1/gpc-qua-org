@@ -1,0 +1,158 @@
+<?php
+$tmp_pn_ary = explode('_',$_SET['Nav']['pagename']);
+$tmp_pn = $tmp_pn_ary[0];
+?>
+
+<aside class="lnb_filter">
+	<ul class="filter">
+		<li>
+			<label><input type="checkbox" name="filter_all"><span>전체</span></label>
+		</li>
+		<li>
+			<label><input type="checkbox" name="PN01"><span>일상</span></label>
+		</li>
+		<li>
+			<label><input type="checkbox" name="PN02"><span>취미</span></label>
+			<a class="more"></a>
+			<div class="subs">
+				<label><input type="checkbox" name="PN0201"><span>맛집, 관광</span></label>
+				<label><input type="checkbox" name="PN0202"><span>인테리어, 소품</span></label>
+				<label><input type="checkbox" name="PN0203"><span>반려동물</span></label>
+				<label><input type="checkbox" name="PN0204"><span>반려식물</span></label>
+				<label><input type="checkbox" name="PN0205"><span>캠핑, 여행</span></label>
+				<label><input type="checkbox" name="PN0206"><span>기타</span></label>
+			</div>
+		</li>
+		<li>
+			<label><input type="checkbox" name="PN03"><span>문화</span></label>
+			<a class="more"></a>
+			<div class="subs">
+				<label><input type="checkbox" name="PN0301"><span>예술, 공연</span></label>
+				<label><input type="checkbox" name="PN0302"><span>TV, 연예</span></label>
+				<label><input type="checkbox" name="PN0303"><span>스포츠</span></label>
+				<label><input type="checkbox" name="PN0304"><span>기타</span></label>
+			</div>
+		</li>
+		<li>
+			<label><input type="checkbox" name="PN04"><span>생활</span></label>
+			<a class="more"></a>
+			<div class="subs">
+				<label><input type="checkbox" name="PN0401"><span>썸, 연애</span></label>
+				<label><input type="checkbox" name="PN0402"><span>결혼생활</span></label>
+				<label><input type="checkbox" name="PN0403"><span>육아, 교육</span></label>
+				<label><input type="checkbox" name="PN0404"><span>학교생활</span></label>
+				<label><input type="checkbox" name="PN0405"><span>회사생활</span></label>
+				<label><input type="checkbox" name="PN0406"><span>기타</span></label>
+			</div>
+		</li>
+		<li>
+			<label><input type="checkbox" name="PN05"><span>정치/사회</span></label>
+			<a class="more"></a>
+			<div class="subs">
+				<label><input type="checkbox" name="PN0501"><span>정치</span></label>
+				<label><input type="checkbox" name="PN0502"><span>사회</span></label>
+				<label><input type="checkbox" name="PN0503"><span>경제</span></label>
+			</div>
+		</li>
+		<li>
+			<label><input type="checkbox" name="PN06"><span>비밀보장</span></label>
+			<a class="more"></a>
+			<div class="subs">
+				<label><input type="checkbox" name="PN0601"><span>시크릿상담</span></label>
+				<label><input type="checkbox" name="PN0602"><span>업 or 다운</span></label>
+				<label><input type="checkbox" name="PN0603"><span>우리끼리</span></label>
+				<label><input type="checkbox" name="PN0604"><span>기타</span></label>
+			</div>
+		</li>
+	</ul>
+</aside>
+<script>
+
+$(document).on("click", ".filter .more", function() {
+	$(this).closest('li').toggleClass('opened');
+});
+</script>
+<aside class="sns_rank">
+	<div class="box_wrap">
+		<div class="top">
+			<h3>댓글 베스트</h3>
+			<span class="sc_tab">
+				<a class="prev"></a>
+				<a class="next"></a>
+			</span>
+		</div>
+		<div class="cnts_box rank">
+			<ul>
+				<li><a ><i>1</i>바나닦시 필수 품 아이스박스! 어떤것들이 좋을까?<em>354</em><span>일상</span></a></li>
+				<li><a ><i>2</i>태양광 발전 사업 어디까지 진행되었나?<em>286</em><span>생활</span></a></li>
+				<li><a ><i>3</i>오랜만에 깔끔한 캠핑을 즐기고 왔어요.<em>275</em><span>정치/사회</span></a></li>
+				<li><a ><i>4</i>만남의 기쁨도 헤어짐의 슬픔도 긴시간을 스쳐가는 순간인것을 왜 모르나<em>274</em><span>생활</span></a></li>
+				<li><a ><i>5</i>주가 올라 얻은 소득에 세금, 거래세는 내린다.<em>264</em><span>생활</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<!--div class="bn">
+		<img src="/_img/sample/sample_1.png">
+	</div-->
+	<div class="box_wrap">
+		<div class="top">
+			<h3>UP 베스트</h3>
+			<span class="sc_tab">
+				<a class="prev"></a>
+				<a class="next"></a>
+			</span>
+		</div>
+		<div class="cnts_box rank">
+			<ul>
+				<li><a ><i>1</i>바나닦시 필수 품 아이스박스! 어떤것들이 좋을까?<em>354</em><span>일상</span></a></li>
+				<li><a ><i>2</i>태양광 발전 사업 어디까지 진행되었나?<em>286</em><span>일상</span></a></li>
+				<li><a ><i>3</i>오랜만에 깔끔한 캠핑을 즐기고 왔어요.<em>275</em><span>일상</span></a></li>
+				<li><a ><i>4</i>만남의 기쁨도 헤어짐의 슬픔도 긴시간을 스쳐가는 순간인것을 왜 모르나<em>274</em><span>정치/사회</span></a></li>
+				<li><a ><i>5</i>주가 올라 얻은 소득에 세금, 거래세는 내린다.<em>264</em><span>일상</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<!--div class="bn">
+		<img src="/_img/sample/sample_2.png">
+	</div-->
+	<div class="box_wrap">
+		<div class="top">
+			<h3>스크랩 베스트</h3>
+			<span class="sc_tab">
+				<a class="prev"></a>
+				<a class="next"></a>
+			</span>
+		</div>
+		<div class="cnts_box rank">
+			<ul>
+				<li><a ><i>1</i>바나닦시 필수 품 아이스박스! 어떤것들이 좋을까?<em>354</em><span>일상</span></a></li>
+				<li><a ><i>2</i>태양광 발전 사업 어디까지 진행되었나?<em>286</em><span>취미</span></a></li>
+				<li><a ><i>3</i>오랜만에 깔끔한 캠핑을 즐기고 왔어요.<em>275</em><span>정치/사회</span></a></li>
+				<li><a ><i>4</i>만남의 기쁨도 헤어짐의 슬픔도 긴시간을 스쳐가는 순간인것을 왜 모르나<em>274</em><span>생활</span></a></li>
+				<li><a ><i>5</i>주가 올라 얻은 소득에 세금, 거래세는 내린다.<em>264</em><span>취미</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<!--div class="bn">
+		<img src="/_img/sample/sample_3.png">
+	</div-->
+	<!--div class="box_wrap">
+		<div class="top">
+			<h3>인기태그</h3>
+			<span class="sc_tab">
+				<a class="prev"></a>
+				<a class="next"></a>
+			</span>
+		</div>
+		<div class="cnts_box rank">
+			<ul>
+				<li><a ><i>1</i>#캠핑카<em>457</em><span>캠핑,여행</span></a></li>
+				<li><a ><i>2</i>#골프<em>286</em><span>스포츠</span></a></li>
+				<li><a ><i>3</i>#홍가네짬뽕<em>275</em><span>맛집,관광</span></a></li>
+				<li><a ><i>4</i>#영어선생님<em>274</em><span>학교생활</span></a></li>
+				<li><a ><i>5</i>#커플링<em>264</em><span>썸,연애</span></a></li>
+			</ul>
+		</div>
+	</div-->
+</aside>
+

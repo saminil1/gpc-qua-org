@@ -1,0 +1,361 @@
+<?php
+$tmp_pn_ary = explode('_',$_SET['Nav']['pagename']);
+$tmp_pn = $tmp_pn_ary[0];
+?>
+
+<aside class="lnb_filter ">
+	<!--h2>
+		검색필터
+		<button type="button" class="close btn_filter_close"></button>
+	</h2-->
+	<div class="checked">
+		<p><span>일상</span><span>맛집, 관광</span><span>캠핑, 여행</span></p>
+		<button type="button" class="filter_toggle btn_filter_form">필터</button>
+	</div>
+<form name="fm_filter" method="post" enctype="multipart/form-data" >
+	<input type="hidden" name="pg" value="1">
+	<input type="hidden" name="user_idx" value="">
+	<input type="hidden" name="stxt" value="">
+	<ul class="filter obj_lnb_filter">
+		<li>
+			<label><input type="checkbox" name="filter_all" value="ALL" checked><span>전체</span></label>
+		</li>
+<?php
+$CHK_HTML = '';
+foreach( $_VAR['PANN'] as $k => $v ) {
+	if( strlen($k) == 4 ) {
+		$CHK_HTML .= '<li>';
+		$CHK_HTML .= '<label><input type="checkbox" name="filter_main[]" value="'.$k.'"><span>'.$v.'</span></label>';
+
+		$CHK_HTML_SUB = '';
+		foreach( $_VAR['PANN'] as $kk => $vv ) {
+			if( strlen($kk) == 6 ) {
+				if( strpos($kk, $k) !== false ) {
+					$CHK_HTML_SUB .= '<label><input type="checkbox" name="filter_sub[]" value="'.$kk.'"><span>'.$vv.'</span></label>';
+				}
+			}
+		}
+		if( $CHK_HTML_SUB ) {
+			$CHK_HTML .= '<a class="more"></a>';
+			$CHK_HTML .= '<div class="subs">'.$CHK_HTML_SUB.'</div>';
+		}
+		$CHK_HTML .= '</li>';
+	}
+}
+echo $CHK_HTML;
+?>
+	</ul>
+</form>
+</aside>
+<script>
+$(document).ready(function(){
+	var lnb_filter = $('.obj_lnb_filter').first().html();
+	$('.obj_lnb_filter').html(lnb_filter);
+
+	$(document).on("change", "input[name='filter_all']:checkbox", function() {
+		var t_ul = $(this).closest('ul');
+		if( $(this).prop("checked") ) {
+			$(t_ul).find("input[name='filter_main[]']:checkbox").prop("checked",false);
+			$(t_ul).find("input[name='filter_sub[]']:checkbox").prop("checked",false);
+		}
+
+		lnb_filter = $(this).closest('.obj_lnb_filter').children().clone();
+		$('.obj_lnb_filter').html(lnb_filter);
+		getList( 1 );
+	});
+
+	$(document).on("click", "input[name='filter_main[]']:checkbox", function() {
+		var t_ul = $(this).closest('ul');
+		var t_li = $(this).closest('li');
+
+		if( $(this).prop("checked") ) {
+			$(t_li).find("input[name='filter_sub[]']:checkbox").prop("checked",true);
+		} else {
+			$(t_li).find("input[name='filter_sub[]']:checkbox").prop("checked",false);
+		}
+
+		if( $(t_ul).find("input[name='filter_main[]']:checkbox:checked").length == 0 && $(t_ul).find("input[name='filter_sub[]']:checkbox:checked").length == 0 ) {
+			$(t_ul).find("input[name='filter_all']:checkbox").prop("checked",true);
+		} else {
+			$(t_ul).find("input[name='filter_all']:checkbox").prop("checked",false);
+		}
+
+		lnb_filter = $(this).closest('.obj_lnb_filter').children().clone();
+		$('.obj_lnb_filter').html(lnb_filter);
+		getList( 1 );
+	});
+
+	$(document).on("click", "input[name='filter_sub[]']:checkbox", function() { // 리스트 개별선택시 전체선택 체크
+		var t_ul = $(this).closest('ul');
+		var t_li = $(this).closest('li');
+
+		$(t_li).find("input[name='filter_sub[]']:checkbox").each(function(){
+			if( !$(this).prop('checked') ) {
+				$(t_li).find("input[name='filter_main[]']:checkbox").prop("checked",false);
+				return false;
+			}
+
+			$(t_li).find("input[name='filter_main[]']:checkbox").prop('checked',true);
+		});
+
+		if( $(t_ul).find("input[name='filter_main[]']:checkbox:checked").length == 0 && $(t_ul).find("input[name='filter_sub[]']:checkbox:checked").length == 0 ) {
+			$(t_ul).find("input[name='filter_all']:checkbox").prop("checked",true);
+		} else {
+			$(t_ul).find("input[name='filter_all']:checkbox").prop("checked",false);
+		}
+
+		lnb_filter = $(this).closest('.obj_lnb_filter').children().clone();
+		$('.obj_lnb_filter').html(lnb_filter);
+		getList( 1 );
+	});
+
+
+
+	$(document).on("click", ".btn_filter_form", function() {
+		if( $(this).hasClass('opened') ) {
+			$(this).removeClass('opened');
+			$('.obj_lnb_filter').removeClass('show');
+		} else {
+			$(this).addClass('opened');
+			$('.obj_lnb_filter').addClass('show');
+		}
+	});
+
+	$(document).on("click", ".btn_filter_close", function() {
+		$('.btn_filter_form').removeClass('opened');
+		$('.obj_lnb_filter').removeClass('show');
+	});
+
+	$(document).on("click", ".filter .more", function() {
+		$(this).closest('li').toggleClass('opened');
+	});
+});
+</script>
+<aside class="sns_rank">
+
+	<div class="box_wrap">
+		<div class="top">
+			<h3>댓글 베스트</h3>
+			<!--span class="sc_tab">
+				<a class="prev"></a>
+				<a class="next"></a>
+			</span-->
+		</div>
+		<div class="cnts_box rank">
+			<ul>
+				<?php
+				$add_sql = '';
+				if( $_SET['Nav']['pagefolder'] == 'myhome' ) {
+					$add_sql = " and a.mb_seq = '".$ME['idx']."' ";
+				}
+				$tmp_q = $Mysql_Base->Query_normal("
+											select a.*, b.*
+												from rt_board a
+													left join user b on ( a.mb_seq = b.idx )
+														where a.b_open & 1
+														".$add_sql."
+																order by a.b_cnt_cmt DESC
+																	limit 5
+											");
+				$no = 1;
+				while( $tmp_l = @mysqli_fetch_array($tmp_q) ) {
+					if( !$tmp_l['b_txt'] ) {
+						$tmp_l['b_txt'] = '이미지입니다.';
+					}
+					echo '<li><a href="'.$_SET['Path']['root'].'/pann/list.html?bno='.$tmp_l['b_seq'].'"><i>'.sprintf('%02d',$no++).'</i>'.$tmp_l['b_txt'].'<em>'.$tmp_l['b_cnt_cmt'].'</em><span name="name">'.$tmp_l['nickname'].'</span></a></li>';
+				}
+				?>
+				<!--li><a ><i>1</i>바나닦시 필수 품 아이스박스! 어떤것들이 좋을까?<em>354</em><span>삼도리2</span></a></li>
+				<li><a ><i>2</i>태양광 발전 사업 어디까지 진행되었나?<em>286</em><span>드포리카</span></a></li>
+				<li><a ><i>3</i>오랜만에 깔끔한 캠핑을 즐기고 왔어요.<em>275</em><span>사강8877</span></a></li>
+				<li><a ><i>4</i>만남의 기쁨도 헤어짐의 슬픔도 긴시간을 스쳐가는 순간인것을 왜 모르나<em>274</em><span>호밍84</span></a></li>
+				<li><a ><i>5</i>주가 올라 얻은 소득에 세금, 거래세는 내린다.<em>264</em><span>홍이여니</span></a></li-->
+			</ul>
+		</div>
+	</div>
+	<div class="bn">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- livingmap_map_main -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-6553465614984908"
+			 data-ad-slot="5610438579"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+	<div class="box_wrap">
+		<div class="top">
+			<h3>UP 베스트</h3>
+			<!--span class="sc_tab">
+				<a class="prev"></a>
+				<a class="next"></a>
+			</span-->
+		</div>
+		<div class="cnts_box rank">
+			<ul>
+				<?php
+				$add_sql = '';
+				if( $_SET['Nav']['pagefolder'] == 'myhome' ) {
+					$add_sql = " and a.mb_seq = '".$ME['idx']."' ";
+				}
+
+				$tmp_q = $Mysql_Base->Query_normal("
+											select a.*, b.*
+												from rt_board a
+													left join user b on ( a.mb_seq = b.idx )
+														where a.b_open & 1
+														".$add_sql."
+																order by a.b_cnt_up DESC
+																	limit 5
+											");
+				$no = 1;
+				while( $tmp_l = @mysqli_fetch_array($tmp_q) ) {
+					if( !$tmp_l['b_txt'] ) {
+						$tmp_l['b_txt'] = '이미지입니다.';
+					}
+					echo '<li><a href="'.$_SET['Path']['root'].'/pann/list.html?bno='.$tmp_l['b_seq'].'"><i>'.sprintf('%02d',$no++).'</i>'.$tmp_l['b_txt'].'<em>'.$tmp_l['b_cnt_up'].'</em><span name="name">'.$tmp_l['nickname'].'</span></a></li>';
+				}
+				?>
+				<!--li><a ><i>1</i>바나닦시 필수 품 아이스박스! 어떤것들이 좋을까?<em>354</em><span>삼도리2</span></a></li>
+				<li><a ><i>2</i>태양광 발전 사업 어디까지 진행되었나?<em>286</em><span>드포리카</span></a></li>
+				<li><a ><i>3</i>오랜만에 깔끔한 캠핑을 즐기고 왔어요.<em>275</em><span>사강8877</span></a></li>
+				<li><a ><i>4</i>만남의 기쁨도 헤어짐의 슬픔도 긴시간을 스쳐가는 순간인것을 왜 모르나<em>274</em><span>호밍84</span></a></li>
+				<li><a ><i>5</i>주가 올라 얻은 소득에 세금, 거래세는 내린다.<em>264</em><span>홍이여니</span></a></li-->
+			</ul>
+		</div>
+	</div>
+	<div class="bn">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- livingmap_map_main -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-6553465614984908"
+			 data-ad-slot="5610438579"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+	<div class="box_wrap">
+		<div class="top">
+			<h3>스크랩 베스트</h3>
+			<!--span class="sc_tab">
+				<a class="prev"></a>
+				<a class="next"></a>
+			</span-->
+		</div>
+		<div class="cnts_box rank">
+			<ul>
+				<?php
+				$add_sql = '';
+				if( $_SET['Nav']['pagefolder'] == 'myhome' ) {
+					$add_sql = " and a.mb_seq = '".$ME['idx']."' ";
+				}
+
+				$tmp_q = $Mysql_Base->Query_normal("
+											select a.*, b.*
+												from rt_board a
+													left join user b on ( a.mb_seq = b.idx )
+														where a.b_open & 1
+														".$add_sql."
+																order by a.b_cnt_scrap DESC
+																	limit 5
+											");
+				$no = 1;
+				while( $tmp_l = @mysqli_fetch_array($tmp_q) ) {
+					if( !$tmp_l['b_txt'] ) {
+						$tmp_l['b_txt'] = '이미지입니다.';
+					}
+					echo '<li><a href="'.$_SET['Path']['root'].'/pann/list.html?bno='.$tmp_l['b_seq'].'"><i>'.sprintf('%02d',$no++).'</i>'.$tmp_l['b_txt'].'<em>'.$tmp_l['b_cnt_scrap'].'</em><span name="name">'.$tmp_l['nickname'].'</span></a></li>';
+				}
+				?>
+				<!--li><a ><i>1</i>바나닦시 필수 품 아이스박스! 어떤것들이 좋을까?<em>354</em><span>삼도리2</span></a></li>
+				<li><a ><i>2</i>태양광 발전 사업 어디까지 진행되었나?<em>286</em><span>드포리카</span></a></li>
+				<li><a ><i>3</i>오랜만에 깔끔한 캠핑을 즐기고 왔어요.<em>275</em><span>사강8877</span></a></li>
+				<li><a ><i>4</i>만남의 기쁨도 헤어짐의 슬픔도 긴시간을 스쳐가는 순간인것을 왜 모르나<em>274</em><span>호밍84</span></a></li>
+				<li><a ><i>5</i>주가 올라 얻은 소득에 세금, 거래세는 내린다.<em>264</em><span>홍이여니</span></a></li-->
+			</ul>
+		</div>
+	</div>
+	<div class="bn">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- livingmap_map_main -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-6553465614984908"
+			 data-ad-slot="5610438579"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+	<div class="box_wrap">
+		<div class="top">
+			<h3>실시간 인기태그</h3>
+			<!--span class="sc_tab">
+				<a class="prev"></a>
+				<a class="next"></a>
+			</span-->
+		</div>
+		<div class="cnts_box rank">
+			<ul>
+				<?php
+				$add_sql = '';
+				if( $_SET['Nav']['pagefolder'] == 'myhome' ) {
+					$add_sql = " and mb_seq = '".$ME['idx']."' ";
+				}
+
+				$tmp_q = $Mysql_Base->Query_normal("
+											select b_type, t_tag, count(*) as cnt
+												from rt_tags
+														where 1
+															".$add_sql."
+															group by b_type, t_tag
+																order by cnt DESC
+																	limit 5
+											");
+				$no = 1;
+				while( $tmp_l = @mysqli_fetch_array($tmp_q) ) {
+					echo '<li><a href="'.$_SET['Path']['root'].'/pann/list.html?s='.$tmp_l['t_tag'].'"><i>'.sprintf('%02d',$no++).'</i>#'.$tmp_l['t_tag'].'<em>'.$tmp_l['cnt'].'</em><span name="name">'.$_VAR['PANN'][$tmp_l['b_type']].'</span></a></li>';
+				}
+				?>
+				<!--li><a ><i>1</i>#캠핑카<em>457</em><span>캠핑,여행</span></a></li>
+				<li><a ><i>2</i>#골프<em>286</em><span>스포츠</span></a></li>
+				<li><a ><i>3</i>#홍가네짬뽕<em>275</em><span>맛집,관광</span></a></li>
+				<li><a ><i>4</i>#영어선생님<em>274</em><span>학교생활</span></a></li>
+				<li><a ><i>5</i>#커플링<em>264</em><span>썸,연애</span></a></li-->
+			</ul>
+		</div>
+	</div>
+</aside>
+<!--script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script-->
+<script>
+$('aside.sns_rank > .box_wrap > .cnts_box ul').each(function(){
+	var t = $(this);
+	if( t.find('li').length == 0 ) {
+		t.closest('.box_wrap').hide();
+		t.closest('.box_wrap + .bn').hide();
+	}
+});
+
+setTimeout(function() {
+
+	var tmp_height = $('aside.sns_rank').height();
+	console.log(tmp_height);
+
+	if( $('.pann.myhome').length > 0 ) {
+		$('.pann.myhome').css('min-height',tmp_height);
+	}
+	if( $('.cnts_wrap.sec.lround').length > 0 ) {
+		$('.cnts_wrap.sec.lround').css('min-height',tmp_height+100);
+	}
+
+}, 1000);
+
+
+</script>

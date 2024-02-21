@@ -1,0 +1,171 @@
+@media only screen and (max-width: 768px) {
+
+    /* =================================================== 공통 적용 ==================================================== */
+    .wrap{ padding-top: 50px}
+    h4.title{ /* 컨텐츠 타이틀 */
+        font-size:1.5rem;
+        text-align:center;
+    } 
+    h4.title:after{
+        left: 50%;
+        margin-left: -30px;
+    }
+    .btn_more{
+        width:120px; 
+        font-size:0.9rem;
+        padding:0.8rem 1rem;
+        margin:30px auto 0;
+    }
+    #btn_top{ /* TOP 버튼 */
+        width: 60px;
+        height: 60px;
+        font-size: 1rem;
+        padding-top:10px;
+    }
+    .theme-static-content{ font-size:0.7rem; }
+    .main-logo{ width:250px; }
+
+    /* GNB */
+    #main-navigation .col-md-12 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #main-navigation .menu-bar{ display:block; } 
+    #main-navigation .menu-bar a {
+        display: block;
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+        padding:0.4rem 1rem;
+    }
+    #main-navigation .menu-bar a i.fa-home{ font-size:14px; }
+    #main-navigation .menu-bar .mobile-home { float: left; }
+    #main-navigation .menu-bar .show-menu { float: right; }
+    #main-navigation .main-menu{ display:none; } 
+    #main-navigation .main-menu .home-item{ display:none; } /* gnb 홈 아이콘 */
+    #main-navigation .main-menu>li{
+        display: block;
+        width: 100%;
+        float: none;
+    }
+    #main-navigation .main-menu>li a:after {
+        content: '\002B';
+        color: #999;
+        font-weight: 500;
+        float: right;
+        margin-left: 5px;
+      }
+      
+    #main-navigation .main-menu>li>a{
+        padding: 10px 15px;
+        width:100%;
+        height: auto;
+        font-size: 1.25rem;
+        line-height: inherit;
+        border-top: solid 1px #313f49;
+    }
+    #main-navigation .main-menu>li:last-child ul li:last-child a{ border-bottom: solid 1px #dddddd }
+    #main-navigation .main-menu>li .depth2List{
+        display:none;
+        position: relative;
+        width: 100%;
+        left: auto;
+        right: auto;
+        top: 0;
+        opacity: 1;
+    }
+    .active, #main-navigation .main-menu>li>a:hover {
+        background-color: #313f49;
+    }
+      
+    #mainVisual .mainVisual_text h4{ font-size:2.2rem; } /* 메인비주얼 메인타이틀 */
+    #mainVisual .mainVisual_text{ font-size:1.2rem; } /* 메인비주얼 텍스트 */
+    #mainVisual .mainVisual_text .btn_apply{ width:200px;}
+    #mainVisual .mainVisual_text .btn_apply a{ letter-spacing: 2px; }
+    
+    #sec01 .sec01_R_boxes{ margin-top:30px; }
+    #sec01 .sec01_R_boximg_tt p{ font-size: 1.1rem; }
+    #sec02 .sec02_text{ font-size:2.2rem; }
+    #sec03 .sec03_box{
+        flex: 0 0 50%;
+        width: 50%;
+    }
+    #sec03 .sec03_box_content h4{ font-size:1.2rem; }
+    #sec03 .sec03_box_content p{ margin-bottom:1rem; }
+    #sec04 .sec04_L_img { margin-bottom:30px; }
+    #sec05 .sec05_box{
+        flex: 0 0 100%;
+        width: 100%;
+    }
+    #bottom-abcd .col-md-3{ margin-bottom:1rem; }
+    #bottom-abcd .abcd_box h5{
+        font-size:1.1rem; 
+        margin-bottom:1rem;
+    }
+    #bottom-abcd .abcd_box li{ margin-bottom:0.5rem; }
+    #footer .footer_wrap{
+        padding-top: 0px;
+        padding-bottom: 30px;
+    }
+/* ===================================================<<<<< Sub Page >>>>==================================================== */
+    .page-heading h4.coursename{ font-size:1.2rem; }     
+
+    #main-content{ padding:3rem 0; }
+    .content_tt{
+        font-size:1.3rem;
+        margin-bottom:50px;
+    }
+    .introduce_img img{ margin-top:-50px; }
+    ul.content_list{ padding:2rem; }
+    ul.content_list li span.tt{
+        display:block;
+        width:100%;
+    }
+    .content_text_center p{ text-align: justify; }
+    .cpd_essential ul.content_list{ padding: 0; }
+    .cpd_essential ul.content_list li{ padding: 1rem 1.5rem 1.2rem; }
+    .content_text_border{ padding:2rem 1.5rem; }
+    .code_of_conduct ul.content_list li span.number{ width:8%; }
+    .code_of_conduct ul.content_list li span.text{ width:91%; }
+
+    /* 등록신청 페이지 */
+    .step_navi ul{ display:block; }
+    .step_navi ul li{
+        width: calc(100%/2 - 3px);
+        margin-right:0px;
+        margin-bottom:3px;
+        line-height: 1.8;
+    }
+    .step_navi ul li p{ 
+        font-size:0.95rem;
+        font-weight: 400; 
+        padding:10px 15px; 
+    }
+    .arrow{ 
+        width:16px;
+        height:16px;
+        top: 28px;
+        right: 20px;
+     }
+     .arrow::after{ height:0; }
+     input[type=text], input[type=number], input[type=tel], input[type=password], select{
+        width:100%;
+     }
+     .apply_table>thead, 
+     .apply_table>tbody, 
+     .apply_table>tbody>tr, 
+     .apply_table>tbody>tr>th, 
+     .apply_table>tbody>tr>td{ 
+         display: block; 
+     }
+     table.apply_table>tbody th{ width:100%; } /* 테이블 넓이 조정 */
+     table.apply_table>tbody>tr>td{ width:100%; }
+     table.apply_table tbody th, table.apply_table td{ padding:15px 10px; } /* 셀 내부 간격 조정 */
+     input[type=text], input[type=password], select{ width:100%; } /* input 넓이 조정 */
+     label.type_checkbox{ width:49%; }
+     .checklist_box{  padding:15px; } /* 상단 제출서류 안내 박스 */
+     input#address1{ width:100%; } /* 우편번호주소 */
+     input#address2, input#extraAddress{ width: calc(100%/2 - 1.5px); }
+     input#extraAddress{ margin-right:0px; }
+
+} 

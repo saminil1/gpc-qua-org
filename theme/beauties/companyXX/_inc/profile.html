@@ -1,0 +1,95 @@
+<?php
+$user = !$_GET['u'] ? $_SESSION['loginUser']['id'] : $_GET['u'];
+if( !$user ) {
+	goUrl( $_SET['Path']['root'].'/membership/login.html' );
+}
+
+$ME = $Mysql_Base->Query_array("
+								select *
+									from user
+										where idx = '".$_SESSION['loginUser']['seq']."'
+													limit 1
+									");
+$page_auth = 'OWNER';
+if( $_GET['u'] ) {
+	$ME = $Mysql_Base->Query_array("
+									select *
+									 	from user
+											where id = '".$_GET['u']."'
+												and leave_flag = 0
+														limit 1
+										");
+
+	if( !$ME['idx'] ) {
+		goUrl( $_SET['Path']['root'].'/' );
+	} else if( $ME['idx'] == $_SESSION['loginUser']['seq'] ) {
+		$page_auth = 'OWNER';
+	} else {
+		$page_auth = 'GUEST';
+	}
+}
+
+if( $ME['idx'] ) {
+	$ME['area'] = substr($ME['city'],0,3);
+	$ME['sec'] = substr($ME['city'],3,6);
+
+	$ME['data_ary'] =  json_decode( $ME['data'], true );
+	$ME['att_ary'] =  json_decode( $ME['att'], true );
+
+	if( $ME['att_ary'][0] ) {
+		$ME['pic'] = "/_data/member/".$ME['att_ary'][0];
+	} else {
+		$ME['pic'] = "/_img/no_thum.gif";
+	}
+
+	if( $ME['att_ary'][1] ) {
+		$ME['bg'] = "/_data/member/".$ME['att_ary'][1];
+	}
+} else {
+	goUrl( $_SET['Path']['root'].'/membership/login.html' );
+}
+?>
+
+<div class="home_visual" style="background-image: url(<?=$ME['bg']?>);">
+	<i class="thumb" style="background-image: url(<?=$ME['pic']?>);">
+		<?php if( $page_auth == 'OWNER' ) { ?>
+		<a class="setting" href="<?=$_SET['Path']['root']?>/me/profile.html"></a>
+		<?php } ?>
+	</i>
+	<a href="<?=$ME['data_ary']['url']?>" target="_blank" class="url"><?=$ME['data_ary']['url']?></a>
+	<h2><b><?=$ME['nickname']?></b>의 <em>L홈</em></h2>
+	<h4><?=$ME['id']?></h4>
+	<p class="msg"><?=$ME['data_ary']['intro']?></p>
+<?php
+$board_cnt = $Mysql_Base->Query_result(" select count(*) from rt_board where mb_seq = '".$ME['idx']."' and b_open != 4 limit 1 ");
+$follower_cnt = $Mysql_Base->Query_result(" select count(*) from rt_follow where follow_seq = '".$ME['idx']."' limit 1 ");
+$following_cnt = $Mysql_Base->Query_result(" select count(*) from rt_follow where mb_seq = '".$ME['idx']."' limit 1 ");
+$scrap_cnt = $Mysql_Base->Query_result(" select count(*) from rt_scrap a left join rt_board b on (a.b_seq = b.b_seq) where a.mb_seq = '".$ME['idx']."' and b.b_open & 1 limit 1 ");
+?>
+	<p>
+<?php if( $page_auth == 'OWNER' ) { ?>
+		<span>Alarm <b><?=intval($feed_cnt)?></b></span>
+<?php } ?>
+		<span>MyL-Round <b><?=intval($board_cnt)?></b></span>
+		<span>Follower <b><?=intval($follower_cnt)?></b></span>
+		<span>Follow <b><?=intval($following_cnt)?></b></span>
+		<!--span>L-Spot <b>145</b></span-->
+		<span>Scrap <b><?=intval($scrap_cnt)?></b></span>
+	</p>
+	<!--div class="btns">
+		<a>내 정보 관리</a>
+		<a>보안설정</a>
+	</div-->
+</div>
+<nav class="my_menu">
+	<ul>
+<?php if( $page_auth == 'OWNER' ) { ?>
+		<li><a class="<?=( ($_SET['Nav']['pagename'] == 'index') ? 'on' : '' )?>" href="<?=$_SET['Path']['root']?>/myhome/">알림</a></li>
+<?php } ?>
+		<li><a class="<?=( ($_SET['Nav']['pagename'] == 'pann') ? 'on' : '' )?>" href="<?=$_SET['Path']['root']?>/myhome/pann.html<?=( ( $page_auth == 'GUEST' ) ? '?u='.$_GET['u'] : '' )?>">마이L라운드</a></li>
+		<li><a class="<?=( ($_SET['Nav']['pagename'] == 'friends') ? 'on' : '' )?>" href="<?=$_SET['Path']['root']?>/myhome/friends.html<?=( ( $page_auth == 'GUEST' ) ? '?u='.$_GET['u'] : '' )?>">친구</a></li>
+		<li><a class="<?=( ($_SET['Nav']['pagename'] == 'scrap') ? 'on' : '' )?>" href="<?=$_SET['Path']['root']?>/myhome/scrap.html<?=( ( $page_auth == 'GUEST' ) ? '?u='.$_GET['u'] : '' )?>">스크랩</a></li>
+		<!--li><a class="<?=( ($_SET['Nav']['pagename'] == 'favorites') ? 'on' : '' )?>" href="<?=$_SET['Path']['root']?>/myhome/favorites.html">L스팟</a></li>
+		<li><a class="<?=( ($_SET['Nav']['pagename'] == 'review') ? 'on' : '' )?>" href="<?=$_SET['Path']['root']?>/myhome/review.html">한줄평</a></li-->
+	</ul>
+</nav>

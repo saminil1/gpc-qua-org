@@ -1,0 +1,18 @@
+/*common*/
+a {text-decoration:none;}
+
+.container {width:990px;margin:0 auto;}
+
+
+
+/*탭메뉴 */
+.tab ul{list-style:none;margin:0;padding:0;}
+.tab ul.title li:first-child {margin-left:0;}
+.tab ul.title li {float:left; margin-left:5px;}
+.tab ul.title li a {display:block; background:#00091a;padding:5px 10px; color:#fff; }
+
+.tab ul.title li a.show {background:#0055ff}
+
+.tab ul.title:after {content:""; display:block; clear:both; }
+
+.tab ul.panel li{display:none; background:#ccc;height:200px;overflow:hidden; }

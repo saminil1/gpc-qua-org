@@ -1,0 +1,19 @@
+<?php
+$tmp_pn_ary = explode('_',$_SET['Nav']['pagename']);
+$tmp_pn = $tmp_pn_ary[0];
+?>
+
+<aside class="lnb">
+	<h2><em>L GUIDE</em>L가이드</h2>
+	<nav>
+		<ul class="lnb_nav">
+			<li class="<?php echo ($tmp_pn == 'notice') ? 'on' : ''; ?>"><a href="<?=$_SET['Path']['root']?>/guide/notice.html">공지사항</a></li>
+			<li class="<?php echo ($tmp_pn == 'update') ? 'on' : ''; ?>"><a href="<?=$_SET['Path']['root']?>/guide/update.html">업데이트 알림</a></li>
+			<li class="<?php echo ($tmp_pn == 'policy') ? 'on' : ''; ?>"><a href="<?=$_SET['Path']['root']?>/guide/policy.html">이용약관</a></li>
+			<!--li class="<?php echo ($tmp_pn == 'location') ? 'on' : ''; ?>"><a href="<?=$_SET['Path']['root']?>/guide/location.html">위치기반서비스 이용약관</a></li>
+			<li class="<?php echo ($tmp_pn == 'private') ? 'on' : ''; ?>"><a href="<?=$_SET['Path']['root']?>/guide/private.html">개인정보 처리방침</a></li-->
+			<li class="<?php echo ($tmp_pn == 'provider') ? 'on' : ''; ?>"><a href="<?=$_SET['Path']['root']?>/guide/provider.html">자료의출처</a></li>
+		</ul>
+	</nav>
+</aside>
+

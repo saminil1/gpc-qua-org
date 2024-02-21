@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="moodle, GPC 인증 신청 시스템" />
+    <meta name="description" content="GPC 인증 신청 시스템" />
+    <title>GPC 인증 신청 시스템</title>
+    <!-- 파비콘 연결 -->
+    <link rel="shortcut icon" href="//3.36.181.167/pluginfile.php/1/theme_mb2nl/favicon/1655248541/favicon.ico" />
+    <!-- Bootstrap 연결 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fontawesome 연결 -->
+    <script src="https://kit.fontawesome.com/3fa2bab9a8.js" crossorigin="anonymous"></script>
+    <!-- CSS/Javascript 파일 연결 -->
+    <link rel="stylesheet" href="/css/default.css">
+    <link rel="stylesheet" href="/css/design.css">
+    <link rel="stylesheet" href="/css/subpage_design.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <script type="text/javascript" src="/design.js"></script> 
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+    <header w3-include-html="header.html"></header>
+    <div id="page-b">
+        <div id="sub-content">
+            <div class="breadcrumb_bg">
+                <div class="container-fluid">
+                    <div class="row">
+                        <nav class="col-md-12">
+                            <ul class="breadcrumb">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">자격 등록신청</a></li>
+                                <li>신청 등록 조회</li>
+                            </ul>
+                            <h1>신청 등록 조회</h1>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="black_bg"></div>
+                <div class="modal_wrap">
+                    <div>
+                        <h5 style="margin-bottom: 25px;color: #fff;background: #27323a;padding: 20px;">
+                            > 신청 등록 상세보기
+                            <label for="layerPopup" class="modal_close btn-close btn-close-white" style="float: right;"></label>
+                        </h5>
+                    </div>
+                    <div class="modal_container">
+                        <div class="modal_inner">
+                            <div id="form01" style="padding: 0 20px">
+                                <table class="type01" style="width: 100%;">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">이름</th>
+                                            <td>홍길동(hongkildong)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">연락처</th>
+                                            <td>010-123-4567</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">이메일</th>
+                                            <td>test1@gmail.com</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">주소</th>
+                                            <td>서울시 강남구 역삼동</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">자격구분</th>
+                                            <td colspan="3">ISO 심사원자격</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">신청유형</th>
+                                            <td colspan="3">최초인증</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">신청규격</th>
+                                            <td colspan="3">ISO 9001:2015</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">등급</th>
+                                            <td colspan="3">심사원보</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">범위</th>
+                                            <td colspan="3">
+                                                음식료 및 담배, 섬유 및 섬유제품, 가죽 및 가죽제품, 펄프ㆍ종이 및 종이제품, 출판업, 인쇄업, 코크스 제소 및 석유 정제품, 핵연료, 화학약품, 화학제품, 의약품, 고무 및 플라스틱제품, 비금속광물제품, 콘크리트, 시멘트, 석회, 석고 등, 기초금속 및 조립금속제품, 기계 및 장비, 전기및 광학기기, 선박, 항공기타 수송장비, 기타 제조업, 재생, 전기공급, 가스공급, 수도공급, 건설, 도ㆍ소매업.자동차ㆍ오토바이 수리, 개인 및 가정용품 수리, 숙박 및 음식점, 운수, 창고, 통신, 금융 및 보험, 부동산, 임대, 정보기술, 엔지니어링 서비스, 기타서비스, 공공행정, 교육, 보건 및 사회복지, 기타 사회서비스
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <a href="#" class="btn btn-lg btn btn-primary modal_confm" style="display: table;margin: 0 auto 2rem;">확인</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="tt_wh">
+                            <h2 class="point_col">신청 등록 조회</h2>
+                            <p class="tt_line"></p>
+                        </div>
+                        <table class="list">
+                            <colgroup>
+                                <col style="width:5%">
+                                <col style="width:16%">
+                                <col style="width:16%">
+                                <col style="width:16%">
+                                <col style="width:16%">
+                                <col style="width:8%">
+                                <col style="width:8%">
+                                <col style="width:15%">
+                            </colgroup>
+                            <thead>
+                                <tr class="tablet_none">
+                                    <th scope="col">순서</th>
+                                    <th scope="col">이름(영문)</th>
+                                    <th scope="col">연락처</th>
+                                    <th scope="col">이메일</th>
+                                    <th scope="col">주소</th>
+                                    <th scope="col">우편번호</th>
+                                    <th scope="col">상세보기</th>
+                                    <th scope="col">등록일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr class="list_type01">
+                                    <td class="tablet_none">10</td>
+                                    <td class="custom_name">홍길동(hongkildong)<a href="#" class="mobile-arrow tablet_block"></a></td>
+                                    <td class="tal"><span class="list_typeN">연락처 : </span>010-123-4567</td>
+                                    <td class="tal"><span class="list_typeN">이메일 : </span>test1@gmail.com</td>
+                                    <td class="tal"><span class="list_typeN">주소 : </span>서울시 강남구 역삼동</td>
+                                    <td class="tal"><span class="list_typeN">우편번호 : </span>123</td>
+                                    <td class="view_button">
+                                        <a href="#" id="modal_btn">
+                                            <i class="fa-regular fa-square-plus plus-btn"></i>
+                                            <span class="btn btn-outline-primary btn-viewmore tablet_block">상세보기</span>
+                                        </a>
+                                    </td>
+                                    <td class="tablet_none">2022-07-25 11:59:55</td>
+                                </tr>
+                                <tr class="list_type01">
+                                    <td class="tablet_none">9</td>
+                                    <td class="custom_name">홍길동(hongkildong)<a href="#" class="mobile-arrow tablet_block"></a></td>
+                                    <td class="tal"><span class="list_typeN">연락처 : </span>010-123-4567</td>
+                                    <td class="tal"><span class="list_typeN">이메일 : </span>test1@gmail.com</td>
+                                    <td class="tal"><span class="list_typeN">주소 : </span>서울시 강남구 역삼동</td>
+                                    <td class="tal"><span class="list_typeN">우편번호 : </span>123</td>
+                                    <td class="view_button">
+                                        <a href="#" id="modal_btn">
+                                            <i class="fa-regular fa-square-plus plus-btn"></i>
+                                            <span class="btn btn-outline-primary btn-viewmore tablet_block">상세보기</span>
+                                        </a>
+                                    </td>
+                                    <td class="tablet_none">2022-07-25 11:36:24</td>
+                                </tr>
+                                <tr class="list_type01">
+                                    <td class="tablet_none">8</td>
+                                    <td class="custom_name">홍길동(hongkildong)<a href="#" class="mobile-arrow tablet_block"></a></td>
+                                    <td class="tal"><span class="list_typeN">연락처 : </span>010-123-4567</td>
+                                    <td class="tal"><span class="list_typeN">이메일 : </span>test1@gmail.com</td>
+                                    <td class="tal"><span class="list_typeN">주소 : </span>서울시 강남구 역삼동</td>
+                                    <td class="tal"><span class="list_typeN">우편번호 : </span>123</td>
+                                    <td class="view_button">
+                                        <a href="#" id="modal_btn">
+                                            <i class="fa-regular fa-square-plus plus-btn"></i>
+                                            <span class="btn btn-outline-primary btn-viewmore tablet_block">상세보기</span>
+                                        </a>
+                                    </td>
+                                    <td class="tablet_none">2022-07-24 08:33:05</td>
+                                </tr>
+                                <tr class="list_type01">
+                                    <td class="tablet_none">7</td>
+                                    <td class="custom_name">홍길동(hongkildong)<a href="#" class="mobile-arrow tablet_block"></a></td>
+                                    <td class="tal"><span class="list_typeN">연락처 : </span>010-123-4567</td>
+                                    <td class="tal"><span class="list_typeN">이메일 : </span>test1@gmail.com</td>
+                                    <td class="tal"><span class="list_typeN">주소 : </span>서울시 강남구 역삼동</td>
+                                    <td class="tal"><span class="list_typeN">우편번호 : </span>123</td>
+                                    <td class="view_button">
+                                        <a href="#" id="modal_btn">
+                                            <i class="fa-regular fa-square-plus plus-btn"></i>
+                                            <span class="btn btn-outline-primary btn-viewmore tablet_block">상세보기</span>
+                                        </a>
+                                    </td>
+                                    <td class="tablet_none">2022-07-23 12:55:12</td>
+                                </tr>
+                                <tr class="list_type01">
+                                    <td class="tablet_none">6</td>
+                                    <td class="custom_name">홍길동(hongkildong)<a href="#" class="mobile-arrow tablet_block"></a></td>
+                                    <td class="tal"><span class="list_typeN">연락처 : </span>010-123-4567</td>
+                                    <td class="tal"><span class="list_typeN">이메일 : </span>test1@gmail.com</td>
+                                    <td class="tal"><span class="list_typeN">주소 : </span>서울시 강남구 역삼동</td>
+                                    <td class="tal"><span class="list_typeN">우편번호 : </span>123</td>
+                                    <td class="view_button">
+                                        <a href="#" id="modal_btn">
+                                            <i class="fa-regular fa-square-plus plus-btn"></i>
+                                            <span class="btn btn-outline-primary btn-viewmore tablet_block">상세보기</span>
+                                        </a>
+                                    </td>
+                                    <td class="tablet_none">2022-07-23 10:22:48</td>
+                                </tr>
+                                <tr class="list_type01">
+                                    <td class="tablet_none">5</td>
+                                    <td class="custom_name">홍길동(hongkildong)<a href="#" class="mobile-arrow tablet_block"></a></td>
+                                    <td class="tal"><span class="list_typeN">연락처 : </span>010-123-4567</td>
+                                    <td class="tal"><span class="list_typeN">이메일 : </span>test1@gmail.com</td>
+                                    <td class="tal"><span class="list_typeN">주소 : </span>서울시 강남구 역삼동</td>
+                                    <td class="tal"><span class="list_typeN">우편번호 : </span>123</td>
+                                    <td class="view_button">
+                                        <a href="#" id="modal_btn">
+                                            <i class="fa-regular fa-square-plus plus-btn"></i>
+                                            <span class="btn btn-outline-primary btn-viewmore tablet_block">상세보기</span>
+                                        </a>
+                                    </td>
+                                    <td class="tablet_none">2022-07-20 09:59:34</td>
+                                </tr>
+                                <tr class="list_type01">
+									<td class="tablet_none">4</td>
+									<td class="custom_name">홍길동(hongkildong)<a href="#" class="mobile-arrow tablet_block"></a></td>
+									<td class="tal"><span class="list_typeN">연락처 : </span>010-123-4567</td>
+									<td class="tal"><span class="list_typeN">이메일 : </span>test1@gmail.com</td>
+									<td class="tal"><span class="list_typeN">주소 : </span>서울시 강남구 역삼동</td>
+									<td class="tal">123</td>
+                                    <td class="view_button">
+                                        <a href="#" id="modal_btn">
+                                            <i class="fa-regular fa-square-plus plus-btn"></i>
+                                            <span class="btn btn-outline-primary btn-viewmore tablet_block">상세보기</span>
+                                        </a>
+                                    </td>
+                                    <td class="tablet_none">2022-07-04 11:29:34</td>
+                                </tr>
+                                <tr class="list_type01">
+									<td class="tablet_none">3</td>
+									<td class="custom_name">홍길동(hongkildong)<a href="#" class="mobile-arrow tablet_block"></a></td>
+									<td class="tal"><span class="list_typeN">연락처 : </span>010-123-4567</td>
+									<td class="tal"><span class="list_typeN">이메일 : </span>test1@gmail.com</td>
+									<td class="tal"><span class="list_typeN">주소 : </span>서울시 강남구 역삼동</td>
+									<td class="tal">123</td>
+                                    <td class="view_button">
+                                        <a href="#" id="modal_btn">
+                                            <i class="fa-regular fa-square-plus plus-btn"></i>
+                                            <span class="btn btn-outline-primary btn-viewmore tablet_block">상세보기</span>
+                                        </a>
+                                    </td>
+                                    <td class="tablet_none">2022-07-04 10:41:08</td>
+                                </tr>
+                                <tr class="list_type01">
+									<td class="tablet_none">2</td>
+									<td class="custom_name">홍길동(hongkildong)<a href="#" class="mobile-arrow tablet_block"></a></td>
+									<td class="tal"><span class="list_typeN">연락처 : </span>010-123-4567</td>
+									<td class="tal"><span class="list_typeN">이메일 : </span>test1@gmail.com</td>
+									<td class="tal"><span class="list_typeN">주소 : </span>서울시 강남구 역삼동</td>
+									<td class="tal">123</td>
+                                    <td class="view_button">
+                                        <a href="#" id="modal_btn">
+                                            <i class="fa-regular fa-square-plus plus-btn"></i>
+                                            <span class="btn btn-outline-primary btn-viewmore tablet_block">상세보기</span>
+                                        </a>
+                                    </td>
+                                    <td class="tablet_none">2022-06-29 10:32:04</td>
+                                </tr>
+                                <tr class="list_type01">
+									<td class="tablet_none">1</td>
+									<td class="custom_name">홍길동(hongkildong)<a href="#" class="mobile-arrow tablet_block"></a></td>
+									<td class="tal"><span class="list_typeN">연락처 : </span>010-123-4567</td>
+									<td class="tal"><span class="list_typeN">이메일 : </span>test1@gmail.com</td>
+									<td class="tal"><span class="list_typeN">주소 : </span>서울시 강남구 역삼동</td>
+									<td class="tal"><span class="list_typeN">우편번호 : </span>123</td>
+                                    <td class="view_button">
+                                        <a href="#" id="modal_btn">
+                                            <i class="fa-regular fa-square-plus plus-btn"></i>
+                                            <span class="btn btn-outline-primary btn-viewmore tablet_block">상세보기</span>
+                                        </a>
+                                    </td>
+                                    <td class="tablet_none">2022-06-17 15:09:31</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                              <li class="page-item">
+                                <a class="page-link" href="#!" aria-label="Previous">
+                                  <span aria-hidden="true">&laquo;</span>
+                                  <span class="sr-only">Previous</span>
+                                </a>
+                              </li>
+                              <li class="page-item"><a class="page-link" href="#!">1</a></li>
+                              <li class="page-item"><a class="page-link" href="#!">2</a></li>
+                              <li class="page-item"><a class="page-link" href="#!">3</a></li>
+                              <li class="page-item">
+                                <a class="page-link" href="#!" aria-label="Next">
+                                  <span aria-hidden="true">&raquo;</span>
+                                  <span class="sr-only">Next</span>
+                                </a>
+                              </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page-outer -->
+    <ul class="theme-static-content theme-iconnav" style="margin-top: -57px;">
+        <li class="theme-static-item1">
+            <a class="link-replace" href="#">
+                <span class="static-icon"><i class="fa fa-life-ring"></i></span>
+                <span class="text">Link with icon</span>
+            </a>
+        </li>
+        <li class="theme-static-item2">
+            <a class="link-replace" href="#" target="_blank">
+                <span class="static-icon"><i class="fa fa-link"></i></span>
+                <span class="text">Link with icon open in a new window</span>
+            </a>
+        </li>
+        <li class="theme-static-item3">
+            <span class="link-replace"><span class="static-icon"><i class="fa fa-unlock"></i></span><span class="text">Text for guests</span></span>
+        </li>
+    </ul>
+    <button onclick="topFunction()" id="btn_top" title="Go to top"><i class="fa fa-angle-up"></i></button>
+    <footer w3-include-html="footer.html"></footer>
+
+    <!-- design.js -->
+    <script>
+        window.onscroll = function() {scrollFunction()};
+        includeHTML();
+    </script>
+
+    <script>
+        // 상세보기 버튼 클릭 시 모달창 열기 & Close 버튼, 확인버튼 클릭 시 모달창 닫기
+        window.onload = function() {
+            function onClick() {
+                document.querySelector('.modal_wrap').style.display ='block';
+                document.querySelector('.black_bg').style.display ='block';
+            }
+            function offClick() {
+                document.querySelector('.modal_wrap').style.display ='none';
+                document.querySelector('.black_bg').style.display ='none';
+            }
+            document.getElementById('modal_btn').addEventListener('click', onClick);
+            document.querySelector('.modal_close').addEventListener('click', offClick);
+            document.querySelector('.modal_confm').addEventListener('click', offClick);
+        };
+    </script>
+
+    <script>
+        // 태블릿&모바일 해상도일 때 mobile-arrow 클릭 시 상세 정보 보여줌
+        document.addEventListener("DOMContentLoaded", function(event) {
+        
+        var acc = document.getElementsByClassName("mobile-arrow");
+        var panel = document.getElementsByClassName('list_type01');
+        var point_clk = document.getElementsByClassName('custom_name');
+        
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].onclick = function() {
+                var setClasses = !this.classList.contains('active');
+                setClass(acc, 'active', 'remove');
+                setClass(panel, 'show', 'remove');
+                setClass(point_clk, 'active', 'remove');
+        
+                if (setClasses) {
+                    this.classList.toggle("active");
+                    this.parentElement.parentElement.classList.toggle("show");
+                    this.parentElement.classList.toggle("active");
+                }
+            }
+        }
+        
+        function setClass(els, className, fnName) {
+            for (var i = 0; i < els.length; i++) {
+                els[i].classList[fnName](className);
+            }
+        }
+        
+        });
+    </script>
+</body>
+</html>
