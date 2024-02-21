@@ -239,7 +239,7 @@ include_once(G5_THEME_PATH.'/head.php');
 
 <div class="content_wrap animatedParent">
     
-    <div class="top_tt animated fadeInUpShort">GPC 오시는 길</div>
+    <div class="top_tt animated fadeInUpShort">GPC 오시는 길, 20240222-01 집에서 테스트 함. </div>
                     
             <!-- 이미지 삽입 -->
              <img src="../img/company_06.png" alt="GPC인증원 CI" style="max-width: 30%; height: auto; margin: 0 auto; display: block; border: 1px solid pink;padding:10px;">
